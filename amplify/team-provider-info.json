@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mistark-dev-194405-authRole",
+      "UnauthRoleArn": "arn:aws:iam::022613962011:role/amplify-mistark-dev-194405-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::022613962011:role/amplify-mistark-dev-194405-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-mistark-dev-194405-deployment",
+      "UnauthRoleName": "amplify-mistark-dev-194405-unauthRole",
+      "StackName": "amplify-mistark-dev-194405",
+      "StackId": "arn:aws:cloudformation:us-east-2:022613962011:stack/amplify-mistark-dev-194405/db989100-a812-11ed-a9de-066e08f385ed",
+      "AmplifyAppId": "dfm9s71wuwuzs"
+    }
+  }
+}
