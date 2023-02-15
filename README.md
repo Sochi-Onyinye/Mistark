@@ -1,5 +1,4 @@
 # Getting Started with Create React App
-This branch contains commits and work done by Teanna Barrett for the Mistark Senior Project (2023)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
