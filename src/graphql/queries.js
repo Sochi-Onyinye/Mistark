@@ -1,12 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
+export const getBusiness = /* GraphQL */ `
   query GetBlog($id: ID!) {
     getBlog(id: $id) {
       id
       name
-      posts {
+      services {
         items {
           id
           title
