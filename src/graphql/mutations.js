@@ -1,261 +1,648 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createBusiness = /* GraphQL */ `
+  mutation CreateBusiness(
+    $input: CreateBusinessInput!
+    $condition: ModelBusinessConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createBusiness(input: $input, condition: $condition) {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    updateBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    deleteBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createPost = /* GraphQL */ `
-  mutation CreatePost(
-    $input: CreatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    createPost(input: $input, condition: $condition) {
-      id
-      title
-      blog {
+      description
+      location
+      businessOwnerID
+      businessOwner {
         id
-        name
-        posts {
+        firstName
+        lastName
+        businesses {
           nextToken
         }
+        email
         createdAt
         updatedAt
       }
-      comments {
+      reviews {
         items {
           id
+          userID
+          overallRating
+          BusinessID
           content
           createdAt
           updatedAt
-          postCommentsId
+        }
+        nextToken
+      }
+      services {
+        items {
+          id
+          title
+          description
+          price
+          image
+          businessID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          categoryID
+          categoryName
+          id
+          createdAt
+          updatedAt
+          businessCategoriesId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
     }
   }
 `;
-export const updatePost = /* GraphQL */ `
-  mutation UpdatePost(
-    $input: UpdatePostInput!
-    $condition: ModelPostConditionInput
+export const updateBusiness = /* GraphQL */ `
+  mutation UpdateBusiness(
+    $input: UpdateBusinessInput!
+    $condition: ModelBusinessConditionInput
   ) {
-    updatePost(input: $input, condition: $condition) {
+    updateBusiness(input: $input, condition: $condition) {
       id
-      title
-      blog {
+      name
+      description
+      location
+      businessOwnerID
+      businessOwner {
         id
-        name
-        posts {
+        firstName
+        lastName
+        businesses {
           nextToken
         }
+        email
         createdAt
         updatedAt
       }
-      comments {
+      reviews {
         items {
           id
+          userID
+          overallRating
+          BusinessID
           content
           createdAt
           updatedAt
-          postCommentsId
+        }
+        nextToken
+      }
+      services {
+        items {
+          id
+          title
+          description
+          price
+          image
+          businessID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          categoryID
+          categoryName
+          id
+          createdAt
+          updatedAt
+          businessCategoriesId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
     }
   }
 `;
-export const deletePost = /* GraphQL */ `
-  mutation DeletePost(
-    $input: DeletePostInput!
-    $condition: ModelPostConditionInput
+export const deleteBusiness = /* GraphQL */ `
+  mutation DeleteBusiness(
+    $input: DeleteBusinessInput!
+    $condition: ModelBusinessConditionInput
   ) {
-    deletePost(input: $input, condition: $condition) {
+    deleteBusiness(input: $input, condition: $condition) {
       id
-      title
-      blog {
+      name
+      description
+      location
+      businessOwnerID
+      businessOwner {
         id
-        name
-        posts {
+        firstName
+        lastName
+        businesses {
           nextToken
         }
+        email
         createdAt
         updatedAt
       }
-      comments {
+      reviews {
         items {
           id
+          userID
+          overallRating
+          BusinessID
           content
           createdAt
           updatedAt
-          postCommentsId
+        }
+        nextToken
+      }
+      services {
+        items {
+          id
+          title
+          description
+          price
+          image
+          businessID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          categoryID
+          categoryName
+          id
+          createdAt
+          updatedAt
+          businessCategoriesId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
     }
   }
 `;
-export const createComment = /* GraphQL */ `
-  mutation CreateComment(
-    $input: CreateCommentInput!
-    $condition: ModelCommentConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createComment(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
-      post {
-        id
-        title
-        blog {
+      firstName
+      lastName
+      username
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    updateUser(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      username
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    deleteUser(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      username
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createBusinessOwner = /* GraphQL */ `
+  mutation CreateBusinessOwner(
+    $input: CreateBusinessOwnerInput!
+    $condition: ModelBusinessOwnerConditionInput
+  ) {
+    createBusinessOwner(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      businesses {
+        items {
           id
           name
+          description
+          location
+          businessOwnerID
           createdAt
           updatedAt
         }
-        comments {
+        nextToken
+      }
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateBusinessOwner = /* GraphQL */ `
+  mutation UpdateBusinessOwner(
+    $input: UpdateBusinessOwnerInput!
+    $condition: ModelBusinessOwnerConditionInput
+  ) {
+    updateBusinessOwner(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      businesses {
+        items {
+          id
+          name
+          description
+          location
+          businessOwnerID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteBusinessOwner = /* GraphQL */ `
+  mutation DeleteBusinessOwner(
+    $input: DeleteBusinessOwnerInput!
+    $condition: ModelBusinessOwnerConditionInput
+  ) {
+    deleteBusinessOwner(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      businesses {
+        items {
+          id
+          name
+          description
+          location
+          businessOwnerID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createReview = /* GraphQL */ `
+  mutation CreateReview(
+    $input: CreateReviewInput!
+    $condition: ModelReviewConditionInput
+  ) {
+    createReview(input: $input, condition: $condition) {
+      id
+      userID
+      user {
+        id
+        firstName
+        lastName
+        username
+        email
+        createdAt
+        updatedAt
+      }
+      overallRating
+      BusinessID
+      Business {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
       content
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
-export const updateComment = /* GraphQL */ `
-  mutation UpdateComment(
-    $input: UpdateCommentInput!
-    $condition: ModelCommentConditionInput
+export const updateReview = /* GraphQL */ `
+  mutation UpdateReview(
+    $input: UpdateReviewInput!
+    $condition: ModelReviewConditionInput
   ) {
-    updateComment(input: $input, condition: $condition) {
+    updateReview(input: $input, condition: $condition) {
       id
-      post {
+      userID
+      user {
         id
-        title
-        blog {
+        firstName
+        lastName
+        username
+        email
+        createdAt
+        updatedAt
+      }
+      overallRating
+      BusinessID
+      Business {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
           id
-          name
+          firstName
+          lastName
+          email
           createdAt
           updatedAt
         }
-        comments {
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
       content
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
-export const deleteComment = /* GraphQL */ `
-  mutation DeleteComment(
-    $input: DeleteCommentInput!
-    $condition: ModelCommentConditionInput
+export const deleteReview = /* GraphQL */ `
+  mutation DeleteReview(
+    $input: DeleteReviewInput!
+    $condition: ModelReviewConditionInput
   ) {
-    deleteComment(input: $input, condition: $condition) {
+    deleteReview(input: $input, condition: $condition) {
       id
-      post {
+      userID
+      user {
         id
-        title
-        blog {
+        firstName
+        lastName
+        username
+        email
+        createdAt
+        updatedAt
+      }
+      overallRating
+      BusinessID
+      Business {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
           id
-          name
+          firstName
+          lastName
+          email
           createdAt
           updatedAt
         }
-        comments {
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
       content
       createdAt
       updatedAt
-      postCommentsId
+    }
+  }
+`;
+export const createService = /* GraphQL */ `
+  mutation CreateService(
+    $input: CreateServiceInput!
+    $condition: ModelServiceConditionInput
+  ) {
+    createService(input: $input, condition: $condition) {
+      id
+      title
+      description
+      price
+      image
+      businessID
+      businessOwner {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateService = /* GraphQL */ `
+  mutation UpdateService(
+    $input: UpdateServiceInput!
+    $condition: ModelServiceConditionInput
+  ) {
+    updateService(input: $input, condition: $condition) {
+      id
+      title
+      description
+      price
+      image
+      businessID
+      businessOwner {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteService = /* GraphQL */ `
+  mutation DeleteService(
+    $input: DeleteServiceInput!
+    $condition: ModelServiceConditionInput
+  ) {
+    deleteService(input: $input, condition: $condition) {
+      id
+      title
+      description
+      price
+      image
+      businessID
+      businessOwner {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createBusinessCategory = /* GraphQL */ `
+  mutation CreateBusinessCategory(
+    $input: CreateBusinessCategoryInput!
+    $condition: ModelBusinessCategoryConditionInput
+  ) {
+    createBusinessCategory(input: $input, condition: $condition) {
+      categoryID
+      categoryName
+      id
+      createdAt
+      updatedAt
+      businessCategoriesId
+    }
+  }
+`;
+export const updateBusinessCategory = /* GraphQL */ `
+  mutation UpdateBusinessCategory(
+    $input: UpdateBusinessCategoryInput!
+    $condition: ModelBusinessCategoryConditionInput
+  ) {
+    updateBusinessCategory(input: $input, condition: $condition) {
+      categoryID
+      categoryName
+      id
+      createdAt
+      updatedAt
+      businessCategoriesId
+    }
+  }
+`;
+export const deleteBusinessCategory = /* GraphQL */ `
+  mutation DeleteBusinessCategory(
+    $input: DeleteBusinessCategoryInput!
+    $condition: ModelBusinessCategoryConditionInput
+  ) {
+    deleteBusinessCategory(input: $input, condition: $condition) {
+      categoryID
+      categoryName
+      id
+      createdAt
+      updatedAt
+      businessCategoriesId
     }
   }
 `;

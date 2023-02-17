@@ -33,10 +33,10 @@ type BusinessOwner @model {
 type Review @model {
   id: ID! 
   userID: ID!
-  user: User @hasOne(fields: ["userID"])!
+  user: User @hasOne(fields: ["userID"])
   overallRating: Int!
-  BusinessID: ID! @index(name: "byBusiness", sortKeyFields: ["overallRating"])!
-  Business: Business @hasOne(fields: ["BusinessID"])!
+  BusinessID: ID! @index(name: "byBusiness", sortKeyFields: ["overallRating"])
+  Business: Business @hasOne(fields: ["BusinessID"])
   content: String!
 }
 

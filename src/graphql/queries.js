@@ -2,17 +2,57 @@
 // this is an auto generated file. This will be overwritten
 
 export const getBusiness = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+  query GetBusiness($id: ID!) {
+    getBusiness(id: $id) {
       id
       name
+      description
+      location
+      businessOwnerID
+      businessOwner {
+        id
+        firstName
+        lastName
+        businesses {
+          nextToken
+        }
+        email
+        createdAt
+        updatedAt
+      }
+      reviews {
+        items {
+          id
+          userID
+          overallRating
+          BusinessID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       services {
         items {
           id
           title
+          description
+          price
+          image
+          businessID
           createdAt
           updatedAt
-          blogPostsId
+        }
+        nextToken
+      }
+      categories {
+        items {
+          categoryID
+          categoryName
+          id
+          createdAt
+          updatedAt
+          businessCategoriesId
         }
         nextToken
       }
@@ -21,17 +61,34 @@ export const getBusiness = /* GraphQL */ `
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listBusinesses = /* GraphQL */ `
+  query ListBusinesses(
+    $filter: ModelBusinessFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listBusinesses(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
-        posts {
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
           nextToken
         }
         createdAt
@@ -41,110 +98,271 @@ export const listBlogs = /* GraphQL */ `
     }
   }
 `;
-export const getPost = /* GraphQL */ `
-  query GetPost($id: ID!) {
-    getPost(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
-      title
-      blog {
+      firstName
+      lastName
+      username
+      email
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
         id
-        name
-        posts {
-          nextToken
-        }
+        firstName
+        lastName
+        username
+        email
         createdAt
         updatedAt
       }
-      comments {
+      nextToken
+    }
+  }
+`;
+export const getBusinessOwner = /* GraphQL */ `
+  query GetBusinessOwner($id: ID!) {
+    getBusinessOwner(id: $id) {
+      id
+      firstName
+      lastName
+      businesses {
         items {
           id
-          content
+          name
+          description
+          location
+          businessOwnerID
           createdAt
           updatedAt
-          postCommentsId
         }
         nextToken
       }
+      email
       createdAt
       updatedAt
-      blogPostsId
     }
   }
 `;
-export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
+export const listBusinessOwners = /* GraphQL */ `
+  query ListBusinessOwners(
+    $filter: ModelBusinessOwnerFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listBusinessOwners(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
+        firstName
+        lastName
+        businesses {
           nextToken
         }
+        email
         createdAt
         updatedAt
-        blogPostsId
       }
       nextToken
     }
   }
 `;
-export const getComment = /* GraphQL */ `
-  query GetComment($id: ID!) {
-    getComment(id: $id) {
+export const getReview = /* GraphQL */ `
+  query GetReview($id: ID!) {
+    getReview(id: $id) {
       id
-      post {
+      userID
+      user {
         id
-        title
-        blog {
+        firstName
+        lastName
+        username
+        email
+        createdAt
+        updatedAt
+      }
+      overallRating
+      BusinessID
+      Business {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
           id
-          name
+          firstName
+          lastName
+          email
           createdAt
           updatedAt
         }
-        comments {
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
       content
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentFilterInput
+export const listReviews = /* GraphQL */ `
+  query ListReviews(
+    $filter: ModelReviewFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listReviews(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        post {
+        userID
+        user {
           id
-          title
+          firstName
+          lastName
+          username
+          email
           createdAt
           updatedAt
-          blogPostsId
+        }
+        overallRating
+        BusinessID
+        Business {
+          id
+          name
+          description
+          location
+          businessOwnerID
+          createdAt
+          updatedAt
         }
         content
         createdAt
         updatedAt
-        postCommentsId
+      }
+      nextToken
+    }
+  }
+`;
+export const getService = /* GraphQL */ `
+  query GetService($id: ID!) {
+    getService(id: $id) {
+      id
+      title
+      description
+      price
+      image
+      businessID
+      businessOwner {
+        id
+        name
+        description
+        location
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listServices = /* GraphQL */ `
+  query ListServices(
+    $filter: ModelServiceFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        description
+        price
+        image
+        businessID
+        businessOwner {
+          id
+          name
+          description
+          location
+          businessOwnerID
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getBusinessCategory = /* GraphQL */ `
+  query GetBusinessCategory($id: ID!) {
+    getBusinessCategory(id: $id) {
+      categoryID
+      categoryName
+      id
+      createdAt
+      updatedAt
+      businessCategoriesId
+    }
+  }
+`;
+export const listBusinessCategories = /* GraphQL */ `
+  query ListBusinessCategories(
+    $filter: ModelBusinessCategoryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBusinessCategories(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        categoryID
+        categoryName
+        id
+        createdAt
+        updatedAt
+        businessCategoriesId
       }
       nextToken
     }
