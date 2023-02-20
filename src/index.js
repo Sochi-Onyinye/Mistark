@@ -1,14 +1,27 @@
-import React from 'react';
+/*import React from 'react';
 import ReactDOM from 'react-dom/client';
-import LandingPage from './Views/LandingPage';
+
+import App from './App';
+import './index.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div>
-      <LandingPage> </LandingPage>
-
+     <App.js/>
     </div>
   </React.StrictMode>
 );
 
+ReactDOM.render(<App />, document.getElementById('root'));
+*/
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";  
+import './index.css';
+ 
+ReactDOM.render(   
+    <App /> ,
+  document.getElementById("root")
+);
