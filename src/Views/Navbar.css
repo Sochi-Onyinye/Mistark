@@ -3,7 +3,24 @@
     color: #fff;
 }
 
-#id {
-    margin-left: 15px;;
+#buttons{
+    float: right;
+}
+
+#logo {
+    margin-left: 15px;
+    
+}
+
+#login{
+    margin-top: 7px;
+    margin-left: 7px;
+    float: right;
+}
+
+#register{
+    margin-top: 7px;
+    margin-left: 7px;
+    float: right;
 }
 

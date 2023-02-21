@@ -1,17 +1,27 @@
 import React from "react"
-import './Navbar.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import './NavBar.css';
 
-class Navbar extends React.Component{
+class NavBar extends React.Component{
   render() {
     return (
-      <div class="navbar">
-        <a href="#" role="button" id="logo">
-          <img src="./src/others/logo.png" alt="Mistark" />
-        </a>
-        <button type="button" class="btn btn-success btn-sm">Login</button>
-        <button type="button" class="btn btn-success btn-sm">Register</button>
-      </div>
+    <Navbar collapseOnSelect expand="lg">
+        <Container>
+            <Navbar.Brand href="#home"><img src="./src/others/logo.png" alt="Mistark" /></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav id="buttons">
+                    <button type="button" class="btn btn-success btn-sm" id="login">Login</button>
+                    <button type="button" class="btn btn-success btn-sm" id="register">Register</button>
+                </Nav>
+            </Navbar.Collapse>
+        </Container>
+    </Navbar>
     );
   }
 }
-export default Navbar
+export default NavBar
+
+
