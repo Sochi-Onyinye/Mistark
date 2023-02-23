@@ -3,8 +3,9 @@ import {v4 as uuidv4} from 'uuid';
 export default class User{
 	user_uuid = uuidv4();
 
-	constructor(name, email, password) {
-		this.name = name;
+	constructor(fname, lname, email, password) {
+		this.fname = fname;
+		this.lname = lname;
 		this.email = email;
 		this.password = password;
 	}
@@ -13,8 +14,16 @@ export default class User{
 		return this.user_uuid;
 	}
 
+	getFName() {
+		return this.fname;
+	}
+
+	getLName() {
+		return this.lname;
+	}
+
 	getName() {
-		return this.name;
+		return this.fname + " " + this.lname;
 	}
 
 	getEmail() {
@@ -25,8 +34,12 @@ export default class User{
 		return this.password == given_password;
 	}
 
-	setName(new_name) {
-		this.name = new_name;
+	setFName(new_name) {
+		this.fname = new_name;
+	}
+
+	setLName(new_name) {
+		this.lname = new_name;
 	}
 
 	setEmail(new_email) {
@@ -35,5 +48,26 @@ export default class User{
 
 	setPassword(new_password) {
 		this.password = new_password;
+	}
+}
+
+class BusinessOwner extends User {
+
+	constructor(fname, lname, email, password, business_ids) {
+		super(fname, lname, email, password);
+		this.businesses = business_ids;
+	}
+
+	getBusinesses() {
+		return this.businesses;
+	}
+
+	setBusinesses(business_ids) {
+		this.businesses = business_ids;
+	}
+
+	updateBusinesses() {
+		// Will be implemented with DB methods
+		return 0;
 	}
 }
