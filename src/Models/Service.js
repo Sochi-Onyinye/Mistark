@@ -1,10 +1,23 @@
-class Product{
-	constructor(title, category, cost, description, image) {
+import {v4 as uuidv4} from 'uuid';
+	
+class Service {
+	service_uuid = uuidv4();
+
+	constructor(title, category, cost, description, image, business_id) {
+		this.business_id = business_id;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
 		this.text = description;
 		this.image = image;
+	}
+
+	getServiceId() {
+		return this.service_uuid;
+	}
+
+	getBusinessId() {
+		return this.business_id;
 	}
 
 	getTitle() {
@@ -25,6 +38,10 @@ class Product{
 
 	getImage() {
 		return this.image;
+	}
+
+	setBusinessId(new_business) {
+		this.business_id = new_business;
 	}
 
 	setTitle(title) {
