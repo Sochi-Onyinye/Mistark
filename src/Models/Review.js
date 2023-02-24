@@ -3,15 +3,24 @@ import {v4 as uuidv4} from 'uuid';
 class Review{
 	review_uuid = uuidv4();
 
-	constructor(commenter, text, rating, createdAt) {
-		this.commenter = commenter;
+	constructor(commenter, business, text, rating, createdAt) {
+		this.user_id = commenter;
+		this.business = business;
 		this.text = text;
 		this.rating = rating;
 		this.createdAt = createdAt;
 	}
 
-	getCommenter() {
-		return this.commenter;
+	getReviewId() {
+		return this.review_uuid;
+	}
+
+	getUserId() {
+		return this.user_id;
+	}
+
+	getBusinessId() {
+		return this.business;
 	}
 
 	getText() {
@@ -30,11 +39,15 @@ class Review{
 		return this.review_uuid;
 	}
 
+	setBusinessId(new_business) {
+		this.business = new_business; 
+	}
+	
 	setText(new_text) {
-		return this.text = text;
+		this.text = text;
 	}
 
 	setRating(new_rating) {
-		return this.rating = rating;
+		this.rating = rating;
 	}
 }
