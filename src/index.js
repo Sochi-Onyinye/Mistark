@@ -1,27 +1,15 @@
-/*import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css";
+import App from "./App";
 
-import App from './App';
-import './index.css';
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <div>
-     <App.js/>
-    </div>
+    <App />
   </React.StrictMode>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
-*/
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App.js";  
-import './index.css';
- 
-ReactDOM.render(   
-    <App /> ,
-  document.getElementById("root")
-);

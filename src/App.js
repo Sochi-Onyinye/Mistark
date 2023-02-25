@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
-
-import landingPage from './Views/LandingPage/landingPage';
+import LandingPage from './Views/LandingPage';
+import NavBar from './Views/NavBar';
 
 const App = () => (
   <React.StrictMode>
-    <div className="App">
-      <landingPage></landingPage>
+    <div>
+      <NavBar/>
+      <LandingPage/>
     </div>
+    
   </React.StrictMode>
 );
 
