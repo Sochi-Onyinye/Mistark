@@ -3,6 +3,11 @@
     color: #fff;
 }
 
+img {
+    width: 30px;
+    height: 30px;
+}
+
 #buttons{
     float: right;
 }
