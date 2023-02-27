@@ -8,6 +8,7 @@ class LandingPage extends React.Component{
       <div>
         <Header/>
       </div>
+       
     );
   }
 }

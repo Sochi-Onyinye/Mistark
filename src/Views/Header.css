@@ -5,9 +5,32 @@
     left: 35px;
     top: 105px;
     background: #10CD94;
-    opacity: 0.3;
+    opacity: 0.6;
     margin-left: 15px;
     margin-right:48px;
     margin-bottom: 20px;
     justify-content: center;
+}
+
+.mb-3 {
+    width: 890px;
+    height: 112px;
+    left: 338px;
+    top: 148px;
+    font-family: 'Cabin Sketch';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 112px;
+    opacity: 1.0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.mistark__header-search button { 
+    position: absolute;
+    width: 431px;
+    height: 39.12px;
+    left: 524px;
+    top: 238px;
 }
