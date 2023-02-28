@@ -1,16 +1,46 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
+h2{
+  color: white;
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+.gridbody{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.one, .two{
+  padding : 10px !important;
+}
+
+.card{
+  width: 280px;
+  margin: 20px;
+  color: #fff;
+  font-size: 15px;
+}
+
+
+/* Extra small devices (phones, 768px and down) */
+
+@media only screen and (max-width: 740px) {
+  .card{
+    width: 280px;
+    margin: 20px;
     color: #fff;
-    font-size: 16px;
-    margin: 10px 15px;
+    font-size: 15px;
+    margin-left: 40px !important;
   }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+@media (min-width: 740px) and (max-width: 1024px) {
+  .card{
+    width: 280px;
+    margin: 20px;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 40px !important;
   }
-  
-  .card-columns {
-    margin-top: 30px;
-  }
+}

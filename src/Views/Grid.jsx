@@ -4,50 +4,86 @@ import './Grid.css'
 class Grid extends React.Component{
   render() {
     return (
-      <div className="card-columns">
-        <div className="card bg-info">
-          <div className="card-body text-center">
-            <p className="card-text">Fashion & Modeling</p>
+      <div class="gridbody">
+        <h2>Favorites near you</h2>
+        <div class="container card-columns">
+
+          <div class="row one">
+            <div class="col-3 card bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Fashion & Modelling</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Media & Photography</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Food Catering</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Software & Web Development</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
           </div>
+
+
+          <div class="row two">
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Music Production</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Writing and Publications</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card  bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Arts & Crafts </h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
+
+            <div class="col-3 card bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Social Media Publicity</h5>
+                <h6 class="card-subtitle mb-2">Lorem Ipsum</h6>
+                <p class="card-text">Details of this business category</p>
+                <a href="#" class="card-link">link to business</a>
+              </div>
+            </div>
           </div>
-        <div className="card bg-warning">
-          <div className="card-body text-center">
-            <p className="card-text">Media & Photography</p>
-          </div>
-        </div>
-        <div className="card bg-primary">
-          <div className="card-body text-center">
-            <p className="card-text">Food Catering</p>
-          </div>
-        </div>
-        <div className="card bg-warning">
-          <div className="card-body text-center">
-            <p className="card-text">Freelance Writing</p>
-          </div>
-        </div>
-        <div className="card bg-primary">
-          <div className="card-body text-center">
-            <p className="card-text">Software & Web Developments</p>
-          </div>
-        </div>
-        <div className="card bg-info">
-          <div className="card-body text-center">
-            <p className="card-text">Music Production</p>
-          </div>
-        </div>
-        <div className="card bg-primary">
-          <div className="card-body text-center">
-            <p className="card-text">Arts & Crafts</p>
-          </div>
-        </div>
-        <div className="card bg-info">
-          <div className="card-body text-center">
-            <p className="card-text">Social Media Publicity</p>
-          </div>
-        </div>
-        <div className="card bg-warning">
-          <div className="card-body text-center">
-            <p className="card-text">Events Promotions</p>
+
           </div>
         </div>
       </div>
@@ -55,3 +91,4 @@ class Grid extends React.Component{
   }
 }
 export default Grid
+

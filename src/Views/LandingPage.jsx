@@ -8,7 +8,7 @@ class LandingPage extends React.Component{
     return (
       <div>
         <Header/>
-        
+        <Grid/>
       </div>
     );
   }
