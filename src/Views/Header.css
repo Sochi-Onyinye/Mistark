@@ -1,13 +1,5 @@
-.header{
-    position: absolute;
-    width: 1440px;
-    height: 361px;
-    left: 35px;
-    top: 105px;
-    background: #10CD94;
-    opacity: 0.3;
-    margin-left: 15px;
-    margin-right:48px;
-    margin-bottom: 20px;
-    justify-content: center;
+.banner{
+    margin: 25px;
+    background-color: #057C58;
+    height: 360px;
 }
