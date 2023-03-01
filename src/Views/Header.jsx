@@ -16,12 +16,7 @@ class Header extends React.Component{
               <button id="search-button" type="button" class="btn btn-success"> <GeoAltFill/>  Search </button>
             </div>
           </div>
-        </div>
-        
-        <div className="mistark__header-search">
-        <button type="button" class="btn btn-light">Find the nearest business</button>
-      </div>
-
+        </div> 
       </div>
     </div>
     );
