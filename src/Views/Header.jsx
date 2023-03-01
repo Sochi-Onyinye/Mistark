@@ -17,11 +17,6 @@ class Header extends React.Component{
             </div>
           </div>
         </div>
-        
-        <div className="mistark__header-search">
-        <button type="button" class="btn btn-light">Find the nearest business</button>
-      </div>
-
       </div>
     </div>
     );

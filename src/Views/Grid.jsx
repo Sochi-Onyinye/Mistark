@@ -5,7 +5,7 @@ class Grid extends React.Component{
   render() {
     return (
       <div class="gridbody">
-        <h2>Favorites near you</h2>
+        <h2>Recommended Businesses...</h2>
         <div class="container card-columns">
 
           <div class="row one">
