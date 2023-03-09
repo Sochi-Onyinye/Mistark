@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { PencilFill } from "react-bootstrap-icons";
 import {  ArrowRightSquareFill } from "react-bootstrap-icons";
 
@@ -8,6 +8,9 @@ import logo from '../others/logo.png'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import UserLogin from "./UserLogin";
+import UserRegistration from "./UserRegistration";
+
 import './NavBar.css';
 
 class NavBar extends React.Component{
@@ -15,15 +18,15 @@ class NavBar extends React.Component{
     return (
     <Navbar collapseOnSelect expand="lg">
         <Container>
-            <Navbar.Brand href="#home"><img src={logo} alt="Mistark" /></Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+              <Link to="/landingpage"><Navbar.Brand href="#home"><img src={logo} alt="Mistark" /></Navbar.Brand></Link>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav id="buttons">
-                    <Link to="/userlogin"><button type="button" class="btn btn-success btn-sm" id="login">Login  <ArrowRightSquareFill id="loginicon"/> </button></Link>
-                    <button type="button" class="btn btn-success btn-sm" id="register">Register  <PencilFill id="registericon"/> </button>
-                </Nav>
-            </Navbar.Collapse>
-        </Container>
+                      <Link to="/login" component={UserLogin}><button type="button" class="btn btn-success btn-sm" id="login">Login  <ArrowRightSquareFill id="loginicon"/> </button></Link>
+                      <Link to="/registration" component={UserRegistration}><button type="button" class="btn btn-success btn-sm" id="register">Register  <PencilFill id="registericon"/></button></Link>
+                    </Nav>
+              </Navbar.Collapse>
+          </Container>
     </Navbar>
     );
   }
