@@ -1,11 +1,13 @@
-import React from "react"
+import React from "react";
+import Blur from 'react-blur';
 import "./UserLogin.css";
+import background from '../others/background.png'
 
 class UserLogin extends React.Component{
   render() {
     return (
       <div>
-         <h1>UserLogin Page</h1>
+        <img src={background} alt="background" />
       </div>
        
     );
