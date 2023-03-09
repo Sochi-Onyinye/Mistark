@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './Views/LandingPage';
 import NavBar from './Views/NavBar';
+import UserLogin from './Views/UserLogin';
+import UserRegistration from './Views/UserRegistration';
 
 
 

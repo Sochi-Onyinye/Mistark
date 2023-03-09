@@ -1,5 +1,5 @@
 .navbar {
-    background-color: transparent;
+    background-color: #10CD94;
     color: #fff;
     padding: 0 important;
 }
@@ -30,4 +30,3 @@ img {
 #loginicon, #registericon{
     margin-left: 4px;
 }
-
