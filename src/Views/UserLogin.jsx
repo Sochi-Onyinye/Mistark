@@ -1,5 +1,4 @@
 import React from "react";
-import Blur from 'react-blur';
 import "./UserLogin.css";
 import background from '../others/background.png'
 
