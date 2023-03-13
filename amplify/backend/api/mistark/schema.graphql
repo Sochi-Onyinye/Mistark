@@ -26,7 +26,7 @@ type BusinessOwner @model {
   id: ID! 
   firstName: String!
   lastName: String!
-  businesses: [Business!]! @hasMany(indexName: "byBusinessOwner", fields: ["id"])
+  businesses: [Business]! @hasMany(indexName: "byBusinessOwner", fields: ["id"])
   email: String!
 }
 
