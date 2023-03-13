@@ -10,6 +10,11 @@
       "StackName": "amplify-mistark-dev-194405",
       "StackId": "arn:aws:cloudformation:us-east-2:022613962011:stack/amplify-mistark-dev-194405/db989100-a812-11ed-a9de-066e08f385ed",
       "AmplifyAppId": "dfm9s71wuwuzs"
+    },
+    "categories": {
+      "auth": {
+        "Mistark": {}
+      }
     }
   }
 }
