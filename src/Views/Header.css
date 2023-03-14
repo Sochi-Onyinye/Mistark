@@ -22,6 +22,15 @@ input{
    width: 300px !important;
 }
 
+.Geliat-Bold {
+    font-family: "Geliat-ExtraBold";
+}
+
+.Geliat-Light{
+    font-family: "Geliat-ExtraLight";
+}
+
+
 
 /* Extra small devices (phones, 768px and down) */
 

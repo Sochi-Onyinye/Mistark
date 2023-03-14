@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Geliat-ExtraBold";
+    src: local("Geliat-ExtraBold"),
+     url("./Fonts/Geliat-ExtraBold.otf") format("truetype");
+    font-weight: bold;
+    }
+
+@font-face {
+    font-family: "Geliat-ExtraLight";
+    src: local("Geliat-ExtraLight"),
+        url("./Fonts/Geliat-ExtraLight.otf") format("truetype");
+    font-weight: bold;
+    }
+
