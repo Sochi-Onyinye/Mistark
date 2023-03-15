@@ -6,6 +6,7 @@ import UserLogin from './Views/UserLogin';
 import BusinessLogin from './Views/BusinessLogin';
 import UserRegistration from './Views/UserRegistration';
 import UserFeed from "./Views/UserFeed";
+import BusinessAnalytics from "./Views/BusinessAnalytics";
 
 
 
@@ -19,6 +20,7 @@ const App = () => (
         <Route path="/landingpage" element={<LandingPage/>} />
         <Route path="/userfeed" element={<UserFeed/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
+        <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
       </Routes>
     
   </React.StrictMode>
