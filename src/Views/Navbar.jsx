@@ -9,7 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import UserLogin from "./UserLogin";
-import UserRegistration from "./UserRegistration";
+import RegistrationPage from "./RegistrationPage";
 
 import './NavBar.css';
 
@@ -23,7 +23,7 @@ class NavBar extends React.Component{
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav id="buttons">
                       <Link to="/login" component={UserLogin}><button type="button" class="btn btn-success btn-sm" id="login">Login  <ArrowRightSquareFill id="loginicon"/> </button></Link>
-                      <Link to="/registration" component={UserRegistration}><button type="button" class="btn btn-success btn-sm" id="register">Register  <PencilFill id="registericon"/></button></Link>
+                      <Link to="/registration" component={RegistrationPage}><button type="button" class="btn btn-success btn-sm" id="register">Register  <PencilFill id="registericon"/></button></Link>
                     </Nav>
               </Navbar.Collapse>
           </Container>

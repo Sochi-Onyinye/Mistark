@@ -37,6 +37,7 @@ padding: 0 auto;
 color: #00593E;
 }
 
+
 #close{
   color: #00593E !important;
   font-size: 15px;
@@ -46,32 +47,30 @@ color: #00593E;
 
 }
 
+#underline{
+    text-decoration: underline;
+    color: #00593E !important;
+  }
+  
+
+#registerlinks{
+    font-size: 10px !important;
+}
+
 h2, p {
   color: #00593E !important;
 }
 
 h5{
   margin-bottom: 30px;
+  
 }
 
-#underline{
-  text-decoration: underline;
-  color: #00593E !important;
-}
 
-input{
-  width: fit-content;
-  color: #00593E !important;
-  margin: 5px;
-  border: 1px solid #fff !important;
-}
+
 
 #signinOne, #signinTwo{
   margin: 30px auto;
-}
-
-#forgot{
-  margin-top: 20px;
 }
 
 
@@ -90,16 +89,16 @@ input{
   
     }
 
-  input{
-    width: auto !important;
-    margin: 5px;
-    border: 1px solid #fff !important;
-   }
 
    h2, p, h5{
     font-size: 13px !important;
   }
+
+  #register{
+    font-size: 8px !important;
 }
+}
+
 
 
 @media (min-width: 740px) and (max-width: 1024px) {
@@ -114,10 +113,8 @@ input{
     font-size: 15px;
     }
 
- input{
-  width: auto !important;
-  margin: 5px;
-  border: 1px solid #fff !important;
- }
+    #register{
+        font-size: 9px !important;
+    }
 
 }
