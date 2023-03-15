@@ -16,4 +16,5 @@ class BusinessOwner {
     changeEmail(newEmail) {
         this.email = newEmail;
     }
+
 }
