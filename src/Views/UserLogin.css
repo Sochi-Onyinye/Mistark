@@ -1,0 +1,123 @@
+.bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  backdrop-filter: blur(10px);
+  filter: blur(4px);
+  z-index: 0;
+}
+.bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.overlay {
+    position:absolute;
+    top:50px;
+    left:50px;
+}
+
+
+.loginCard {
+width: 34% !important;
+height: 600px !important;
+background-color: #D9F3EB;
+justify-content: center;
+align-self: center;
+margin: 50px auto;
+padding: 0 auto;
+color: #00593E;
+}
+
+#close{
+  color: #00593E !important;
+  font-size: 15px;
+  position:absolute;
+  top: 5px;
+  left: 10px;
+
+}
+
+h2, p {
+  color: #00593E !important;
+}
+
+h5{
+  margin-bottom: 30px;
+}
+
+#underline{
+  text-decoration: underline;
+  color: #00593E !important;
+}
+
+input{
+  width: fit-content;
+  color: #00593E !important;
+  margin: 5px;
+  border: 1px solid #fff !important;
+}
+
+#signinOne, #signinTwo{
+  margin: 30px auto;
+}
+
+#forgot{
+  margin-top: 20px;
+}
+
+
+
+/* Extra small devices (phones, 768px and down) */
+
+@media only screen and (max-width: 740px) {
+
+  .loginCard {
+    width: 80% !important;
+    height: 500px !important;
+    font-size: 20px;
+    justify-content: center;
+    align-self: center;
+    margin: 100px 50px 50px 50px;
+  
+    }
+
+  input{
+    width: auto !important;
+    margin: 5px;
+    border: 1px solid #fff !important;
+   }
+
+   h2, p, h5{
+    font-size: 13px !important;
+  }
+}
+
+
+@media (min-width: 740px) and (max-width: 1024px) {
+
+  .loginCard {
+    width: 80% !important;
+    height: 400px !important;
+    font-size: 20px;
+    justify-content: center;
+    align-self: center;
+    margin: 100px 50px 50px 50px;
+    font-size: 15px;
+    }
+
+ input{
+  width: auto !important;
+  margin: 5px;
+  border: 1px solid #fff !important;
+ }
+
+}

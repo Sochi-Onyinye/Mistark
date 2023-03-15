@@ -1,0 +1,67 @@
+.banner{
+    margin: 25px;
+    background-color: #057C58;
+    height: 360px;
+}
+
+.mb-3{
+    font-size: 60px;
+    margin: 15px 50px 20px 20px !important;
+    padding: 15px !important;
+    text-align: center;
+}
+
+.input-group{
+    text-emphasis: center;
+    justify-content: center;
+    margin: 10px;
+    font-size: 15px;
+}
+
+input{
+   width: 300px !important;
+}
+
+.Geliat-Bold {
+    font-family: "Geliat-ExtraBold";
+}
+
+.Geliat-Light{
+    font-family: "Geliat-ExtraLight";
+}
+
+
+
+/* Extra small devices (phones, 768px and down) */
+
+@media only screen and (max-width: 740px) {
+    .mb-3{
+        font-size: 40px;
+        margin: 15px 50px 20px 20px !important;
+        padding: 15px !important;
+        text-align: center;
+    }
+    
+    input{
+       width: 150px !important;
+       font-size: 10px;
+    }
+
+    button{
+        font-size: 10px;
+    }
+  }
+  
+  
+@media (min-width: 740px) and (max-width: 1024px) {
+    .mb-3{
+        font-size: 50px;
+        margin: 15px 50px 20px 20px !important;
+        padding: 15px !important;
+        text-align: center;
+    }
+
+    input{
+        width: 200px !important;
+    }
+}

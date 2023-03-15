@@ -1,12 +1,16 @@
 import React from "react"
+import Header from "./Header.jsx"
+import Grid from "./Grid.jsx"
 import "./LandingPage.css";
 
 class LandingPage extends React.Component{
   render() {
     return (
       <div>
-        <h1>Just Landed in Mistark!</h1>
+        <Header/>
+        <Grid/>
       </div>
+       
     );
   }
 }
