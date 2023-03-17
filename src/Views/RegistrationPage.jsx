@@ -20,7 +20,7 @@ class RegistrationPage extends React.Component{
             <div className= "col-12">
               <div className="card loginCard">
                 <div className="p-5 d-flex flex-column align-items-center w-100">
-                  <Link to="/landingpage" component={LandingPage} id="close"><XSquareFill/></Link>
+                  <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Registering as a customer?</h5>
  
                   <p id = "registerlinks">Click <Link to="/userregistration" component={UserRegistration} id="underline" >here</Link> to continue  |

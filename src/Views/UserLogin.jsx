@@ -21,7 +21,7 @@ class UserLogin extends React.Component{
             <div className= "col-12">
               <div className="card loginCard">
                 <div className="p-5 d-flex flex-column align-items-center w-100">
-                  <Link to="/landingpage" component={LandingPage} id="close"><XSquareFill/></Link>
+                  <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Login as a customer?</h5>
 
                   <input className='form-control sr-only' placeholder="Email" type='email'/>
