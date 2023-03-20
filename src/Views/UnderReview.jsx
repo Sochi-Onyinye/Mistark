@@ -1,13 +1,13 @@
 import React from "react"
-import "./RegistrationSuccess.css";
+import "./UnderReview.css";
 import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
 
-import UserLogin from "./UserLogin";
 import LandingPage from "./LandingPage";
 
-class RegistrationSuccess extends React.Component{
+
+class UnderReview extends React.Component{
   render() {
     return (
       <div>
@@ -20,8 +20,8 @@ class RegistrationSuccess extends React.Component{
               <div className="card loginCard">
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
-                  <h5>Your email has been confirmed successfully!</h5>
-                  <p>Click <Link to="/login" component={UserLogin} id="underline">here</Link> to continue to login page</p>
+                  <h5>Your business is currently under review</h5>
+                  <p>Please check your email for more details</p>
                   </div>
               </div>
             </div>
@@ -32,4 +32,4 @@ class RegistrationSuccess extends React.Component{
     );
   }
 }
-export default RegistrationSuccess
+export default UnderReview
