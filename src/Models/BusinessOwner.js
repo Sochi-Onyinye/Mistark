@@ -1,20 +1,22 @@
-class BusinessOwner {
-    constructor(firstName, lastName, email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-    
-    changeFirstName(newFirstName) {
-        this.firstName = newFirstName;
-    }
+import User from "./User.js"
 
-    changeLastName(newLastName) {
-        this.lastName = newLastName;
-    }
+class BusinessOwner extends User {
 
-    changeEmail(newEmail) {
-        this.email = newEmail;
-    }
+	constructor(fname, lname, email, password, business_ids) {
+		super(fname, lname, email, password);
+		this.businesses = business_ids;
+	}
 
+	getBusinesses() {
+		return this.businesses;
+	}
+
+	setBusinesses(business_ids) {
+		this.businesses = business_ids;
+	}
+
+	updateBusinesses() {
+		// Will be implemented with DB methods
+		return 0;
+	}
 }

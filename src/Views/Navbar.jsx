@@ -11,14 +11,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import UserLogin from "./UserLogin";
 import RegistrationPage from "./RegistrationPage";
 
-import './NavBar.css';
+import './Navbar.css';
 
 class NavBar extends React.Component{
   render() {
     return (
     <Navbar collapseOnSelect expand="lg">
         <Container>
-              <Link to="/landingpage"><Navbar.Brand href="#home"><img src={logo} alt="Mistark" /></Navbar.Brand></Link>
+              <Link to="/"><Navbar.Brand href="#home"><img src={logo} alt="Mistark" /></Navbar.Brand></Link>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav id="buttons">

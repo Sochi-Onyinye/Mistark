@@ -1,14 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from './Views/LandingPage';
-import NavBar from './Views/NavBar';
-import UserLogin from './Views/UserLogin';
-import BusinessLogin from './Views/BusinessLogin';
-import UserRegistration from './Views/UserRegistration';
-import UserFeed from "./Views/UserFeed";
-import BusinessAnalytics from "./Views/BusinessAnalytics";
-import BusinessRegistration from "./Views/BusinessRegistration";
-import RegistrationPage from "./Views/RegistrationPage";
+import NavBar from './Views/Navbar.jsx';
+import UserLogin from './Views/UserLogin.jsx';
+import BusinessLogin from './Views/BusinessLogin.jsx';
+import UserRegistration from './Views/UserRegistration.jsx';
+import UserFeed from "./Views/UserFeed.jsx";
+import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
+import BusinessRegistration from "./Views/BusinessRegistration.jsx";
+import BusinessPage from "./Views/BusinessPage.jsx";
+import RegistrationPage from "./Views/RegistrationPage.jsx";
+import LandingPageViewController from './View Controllers/LandingPageViewController.js';
 
 
 
@@ -19,9 +20,11 @@ const App = () => (
         <Route path="/login" element={<UserLogin/>} />
         <Route path="/registration" element={<RegistrationPage/>} />
         <Route path="/navbar" element={<NavBar/>} />
-        <Route path="/landingpage" element={<LandingPage/>} />
+        <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeed/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
+        <Route path="/businesses/:businessID" element={<BusinessPage/>} />
+        <Route path="/categories/:categoryID" element={<BusinessPage/>} />
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistration/>} />
