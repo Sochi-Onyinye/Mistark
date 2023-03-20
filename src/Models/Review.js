@@ -1,7 +1,7 @@
 import {v4 as uuidv4} from 'uuid';
 
 class Review{
-	review_uuid = uuidv4();
+	review_id = uuidv4();
 
 	constructor(commenter, business, text, rating, createdAt) {
 		this.user_id = commenter;
@@ -12,7 +12,7 @@ class Review{
 	}
 
 	getReviewId() {
-		return this.review_uuid;
+		return this.review_id;
 	}
 
 	getUserId() {
@@ -35,8 +35,8 @@ class Review{
 		return this.createdAt;
 	}
 
-	getUuid() {
-		return this.review_uuid;
+	getID() {
+		return this.review_id;
 	}
 
 	setBusinessId(new_business) {

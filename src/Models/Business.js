@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid';
 
 class Business {
 
-	business_uuid = uuidv4();
+	business_id = uuidv4();
 
 	constructor(name, owners, description, location, hours, category, products, reviews) {
 		this.name = name;
@@ -14,7 +14,7 @@ class Business {
 	}
 
 	getBusinessId() {
-		return this.business_uuid;
+		return this.business_id;
 	}
 	
 	getName() {
