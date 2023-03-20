@@ -62,13 +62,16 @@ input{
 }
 
 
+#date, #phone{
+  width: auto;
+}
+
 #email, #password, #firstname, #lastname{
   width: 76% !important;
 }
 
 #passwordpolicy{
   margin-top: 10px;
-  width: 70%;
 }
 
 p{

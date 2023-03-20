@@ -29,7 +29,7 @@ class UserLogin extends React.Component{
                       <input className='form-control sr-only' id='firstname' placeholder="Firstname" type='text'/>
                       <input className='form-control sr-only' id='lastname'  placeholder="Lastname"  type='text'/>
 
-                    <input className='form-control sr-only col-12' id='email' placeholder="Email" type='email'/>
+                    <input className='form-control sr-only' id='email' placeholder="Email" type='email'/>
 
                     <div className="row datel">
                       <input className='form-control sr-only col-5' id='date' placeholder="DOB (mm/dd/yyyy)" type='date'/>
