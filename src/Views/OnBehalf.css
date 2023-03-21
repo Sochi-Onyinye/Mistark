@@ -27,7 +27,7 @@
   
   
   .loginCard {
-  width: 34% ;
+  width: 34% !important;
   height: 600px !important;
   background-color: #D9F3EB;
   justify-content: center;
@@ -59,21 +59,20 @@
     color: #00593E !important;
   }
   
-  input{
-    width: fit-content;
-    color: #00593E !important;
-    margin: 5px;
+  #onbehalfbusinessname, #onbehalfbusinessemail{
+    width: 100% !important;
+    font-size: 12px !important;
+  }
+  
+  Input{
     border: 1px solid #fff !important;
   }
   
-  #signinOne, #signinTwo{
-    margin: 30px auto;
+  p{
+    margin: 10px;
+    font-size: 9px;
+    text-align: center;
   }
-  
-  #forgot{
-    margin-top: 20px;
-  }
-  
   
   
   /* Extra small devices (phones, 768px and down) */
@@ -91,7 +90,7 @@
       }
   
     input{
-      width: auto !important;
+      width: 100% !important;
       margin: 5px;
       border: 1px solid #fff !important;
      }
@@ -115,7 +114,7 @@
       }
   
    input{
-    width: auto !important;
+    width: 100% !important;
     margin: 5px;
     border: 1px solid #fff !important;
    }

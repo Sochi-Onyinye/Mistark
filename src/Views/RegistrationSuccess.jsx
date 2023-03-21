@@ -1,14 +1,13 @@
 import React from "react"
-import "./RegistrationPage.css";
+import "./RegistrationSuccess.css";
 import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
 
-import BusinessRegistration from "./BusinessRegistration";
-import UserRegistration from "./UserRegistration";
+import UserLogin from "./UserLogin";
 import LandingPage from "./LandingPage";
 
-class RegistrationPage extends React.Component{
+class RegistrationSuccess extends React.Component{
   render() {
     return (
       <div>
@@ -21,11 +20,8 @@ class RegistrationPage extends React.Component{
               <div className="card loginCard">
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
-                  <h5>Registering as a customer?</h5>
- 
-                  <p id = "registerlinks">Click <Link to="/userregistration" component={UserRegistration} id="underline" >here</Link> to continue  |
-                  Register <Link to="/businessRegistration" component={BusinessRegistration} id="underline">here</Link> as a business? </p>
-                  
+                  <h5>Your email has been confirmed successfully!</h5>
+                  <p>Click <Link to="/login" component={UserLogin} id="underline">here</Link> to continue to login page</p>
                   </div>
               </div>
             </div>
@@ -36,4 +32,4 @@ class RegistrationPage extends React.Component{
     );
   }
 }
-export default RegistrationPage
+export default RegistrationSuccess
