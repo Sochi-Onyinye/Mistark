@@ -47,9 +47,9 @@ export const onCreateBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -107,9 +107,9 @@ export const onUpdateBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -167,9 +167,9 @@ export const onDeleteBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -567,9 +567,9 @@ export const onCreateBusinessCategory = /* GraphQL */ `
     $filter: ModelSubscriptionBusinessCategoryFilterInput
   ) {
     onCreateBusinessCategory(filter: $filter) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId
@@ -581,9 +581,9 @@ export const onUpdateBusinessCategory = /* GraphQL */ `
     $filter: ModelSubscriptionBusinessCategoryFilterInput
   ) {
     onUpdateBusinessCategory(filter: $filter) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId
@@ -595,9 +595,9 @@ export const onDeleteBusinessCategory = /* GraphQL */ `
     $filter: ModelSubscriptionBusinessCategoryFilterInput
   ) {
     onDeleteBusinessCategory(filter: $filter) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId

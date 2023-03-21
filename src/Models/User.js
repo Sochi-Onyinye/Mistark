@@ -1,7 +1,7 @@
 import {v4 as uuidv4} from 'uuid';
 	
 export default class User{
-	user_uuid = uuidv4();
+	user_id = uuidv4();
 
 	constructor(fname, lname, email, password) {
 		this.fname = fname;
@@ -10,8 +10,8 @@ export default class User{
 		this.password = password;
 	}
 	
-	getUuid() {
-		return this.user_uuid;
+	getID() {
+		return this.user_id;
 	}
 
 	getFName() {
@@ -48,26 +48,5 @@ export default class User{
 
 	setPassword(new_password) {
 		this.password = new_password;
-	}
-}
-
-class BusinessOwner extends User {
-
-	constructor(fname, lname, email, password, business_ids) {
-		super(fname, lname, email, password);
-		this.businesses = business_ids;
-	}
-
-	getBusinesses() {
-		return this.businesses;
-	}
-
-	setBusinesses(business_ids) {
-		this.businesses = business_ids;
-	}
-
-	updateBusinesses() {
-		// Will be implemented with DB methods
-		return 0;
 	}
 }

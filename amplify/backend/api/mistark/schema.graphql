@@ -1,37 +1,33 @@
-# This "input" configures a global authorization rule to enable public access to
-# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
-
-type Business @model {
-  id: ID! 
+type Business @model @auth(rules: [{allow: public}]) {
+  id: ID!
   name: String!
   description: String!
   location: String!
   businessOwnerID: ID @index(name: "byBusinessOwner")
-  businessOwner: BusinessOwner @hasOne(fields: ["businessOwnerID"]) 
+  businessOwner: BusinessOwner @hasOne(fields: ["businessOwnerID"])
   reviews: [Review]! @hasMany(indexName: "byBusiness", fields: ["id"])
   services: [Service]! @hasMany(indexName: "byBusiness", fields: ["id"])
   categories: [BusinessCategory]! @hasMany
 }
 
-type User @model {
-  id: ID! 
-  firstName:  String!
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String!
   lastName: String!
   username: String!
   email: String!
 }
 
-type BusinessOwner @model {
-  id: ID! 
+type BusinessOwner @model @auth(rules: [{allow: public}]) {
+  id: ID!
   firstName: String!
   lastName: String!
   businesses: [Business]! @hasMany(indexName: "byBusinessOwner", fields: ["id"])
   email: String!
 }
 
-type Review @model {
-  id: ID! 
+type Review @model @auth(rules: [{allow: public}]) {
+  id: ID!
   userID: ID!
   user: User @hasOne(fields: ["userID"])
   overallRating: Int!
@@ -40,17 +36,19 @@ type Review @model {
   content: String!
 }
 
-type Service @model {
-  id: ID! 
+type Service @model @auth(rules: [{allow: public}]) {
+  id: ID!
   title: String!
   description: String!
   price: Float!
   image: String!
   businessID: ID! @index(name: "byBusiness")
-  businessOwner: Business @hasOne(fields: ["businessID"]) 
+  businessOwner: Business @hasOne(fields: ["businessID"])
 }
 
-type BusinessCategory @model {
-  categoryID: ID! 
+type BusinessCategory @model @auth(rules: [{allow: public}]) {
+  id: ID!
   categoryName: String!
+  categoryDescription: String!
 }
+ 

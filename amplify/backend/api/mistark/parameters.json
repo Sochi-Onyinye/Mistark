@@ -2,5 +2,5 @@
   "AppSyncApiName": "mistark",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-03-09T21:20:34.217Z"
+  "AuthModeLastUpdated": "2023-03-20T18:20:37.497Z"
 }

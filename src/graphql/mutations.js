@@ -50,9 +50,9 @@ export const createBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -113,9 +113,9 @@ export const updateBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -176,9 +176,9 @@ export const deleteBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -607,9 +607,9 @@ export const createBusinessCategory = /* GraphQL */ `
     $condition: ModelBusinessCategoryConditionInput
   ) {
     createBusinessCategory(input: $input, condition: $condition) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId
@@ -622,9 +622,9 @@ export const updateBusinessCategory = /* GraphQL */ `
     $condition: ModelBusinessCategoryConditionInput
   ) {
     updateBusinessCategory(input: $input, condition: $condition) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId
@@ -637,9 +637,9 @@ export const deleteBusinessCategory = /* GraphQL */ `
     $condition: ModelBusinessCategoryConditionInput
   ) {
     deleteBusinessCategory(input: $input, condition: $condition) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./Fonts/Geliat-ExtraBold.otf"
 import "./Fonts/Geliat-ExtraLight.otf"
 import "./index.css";
-import App from "./App";
+import App from "./App.js";
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports.js';
 

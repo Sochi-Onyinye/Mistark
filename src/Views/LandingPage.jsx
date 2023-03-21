@@ -1,17 +1,16 @@
 import React from "react"
 import Header from "./Header.jsx"
-import Grid from "./Grid.jsx"
 import "./LandingPage.css";
+import LandingPageGrid from "./LandingPageGrid.jsx";
 
-class LandingPage extends React.Component{
-  render() {
+export default function LandingPage(props) {
     return (
       <div>
         <Header/>
-        <Grid/>
+        <LandingPageGrid>
+        {props.categories}
+        </LandingPageGrid>
       </div>
        
     );
-  }
 }
-export default LandingPage

@@ -47,9 +47,9 @@ export const getBusiness = /* GraphQL */ `
       }
       categories {
         items {
-          categoryID
-          categoryName
           id
+          categoryName
+          categoryDescription
           createdAt
           updatedAt
           businessCategoriesId
@@ -336,9 +336,9 @@ export const listServices = /* GraphQL */ `
 export const getBusinessCategory = /* GraphQL */ `
   query GetBusinessCategory($id: ID!) {
     getBusinessCategory(id: $id) {
-      categoryID
-      categoryName
       id
+      categoryName
+      categoryDescription
       createdAt
       updatedAt
       businessCategoriesId
@@ -357,12 +357,11 @@ export const listBusinessCategories = /* GraphQL */ `
       nextToken: $nextToken
     ) {
       items {
-        categoryID
-        categoryName
         id
+        categoryName
+        categoryDescription
         createdAt
         updatedAt
-        businessCategoriesId
       }
       nextToken
     }
