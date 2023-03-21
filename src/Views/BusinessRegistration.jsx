@@ -10,9 +10,7 @@ import LandingPage from "./LandingPage";
 import UnderReview from "./UnderReview";
 
 class BusinessRegistration extends React.Component{
- 
     render() {
-      console.log("dssddsdds");
         return (
           <div>
         <div class="bg">
