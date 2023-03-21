@@ -59,10 +59,13 @@ h5{
   color: #00593E !important;
 }
 
-input{
-  width: fit-content;
+#inputId{
+  width: 100% !important;
   color: #00593E !important;
   margin: 5px;
+}
+
+Input{
   border: 1px solid #fff !important;
 }
 
@@ -91,7 +94,7 @@ input{
     }
 
   input{
-    width: auto !important;
+    width: 100% !important;
     margin: 5px;
     border: 1px solid #fff !important;
    }
@@ -115,7 +118,7 @@ input{
     }
 
  input{
-  width: auto !important;
+  width: 100% !important;
   margin: 5px;
   border: 1px solid #fff !important;
  }

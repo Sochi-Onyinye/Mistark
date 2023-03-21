@@ -27,7 +27,7 @@
   
   
   .loginCard {
-  width: 34% ;
+  width: 34% !important;
   height: 600px !important;
   background-color: #D9F3EB;
   justify-content: center;
@@ -36,6 +36,7 @@
   padding: 0 auto;
   color: #00593E;
   }
+  
   
   #close{
     color: #00593E !important;
@@ -46,32 +47,31 @@
   
   }
   
+  #underline{
+      text-decoration: underline;
+      color: #00593E !important;
+    }
+    
+  
+  #registerlinks{
+      font-size: 13px !important;
+  }
+  
   h2, p {
     color: #00593E !important;
   }
   
   h5{
     margin-bottom: 30px;
+    text-align: center !important;
+    
   }
   
-  #underline{
-    text-decoration: underline;
-    color: #00593E !important;
-  }
   
-  input{
-    width: fit-content;
-    color: #00593E !important;
-    margin: 5px;
-    border: 1px solid #fff !important;
-  }
+  
   
   #signinOne, #signinTwo{
     margin: 30px auto;
-  }
-  
-  #forgot{
-    margin-top: 20px;
   }
   
   
@@ -90,16 +90,16 @@
     
       }
   
-    input{
-      width: auto !important;
-      margin: 5px;
-      border: 1px solid #fff !important;
-     }
   
      h2, p, h5{
       font-size: 13px !important;
     }
+  
+    #register{
+      font-size: 8px !important;
   }
+  }
+  
   
   
   @media (min-width: 740px) and (max-width: 1024px) {
@@ -114,10 +114,8 @@
       font-size: 15px;
       }
   
-   input{
-    width: auto !important;
-    margin: 5px;
-    border: 1px solid #fff !important;
-   }
+      #register{
+          font-size: 9px !important;
+      }
   
   }

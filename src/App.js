@@ -1,15 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './Views/Navbar.jsx';
-import UserLogin from './Views/UserLogin.jsx';
-import BusinessLogin from './Views/BusinessLogin.jsx';
-import UserRegistration from './Views/UserRegistration.jsx';
-import UserFeed from "./Views/UserFeed.jsx";
-import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
-import BusinessRegistration from "./Views/BusinessRegistration.jsx";
-import BusinessPage from "./Views/BusinessPage.jsx";
-import RegistrationPage from "./Views/RegistrationPage.jsx";
+import LandingPage from './Views/LandingPage';
+import NavBar from './Views/NavBar';
+import UserLogin from './Views/UserLogin';
+import BusinessLogin from './Views/BusinessLogin';
+import UserRegistration from './Views/UserRegistration';
+import UserFeed from "./Views/UserFeed";
+import BusinessAnalytics from "./Views/BusinessAnalytics";
+import BusinessRegistration from "./Views/BusinessRegistration";
+import RegistrationPage from "./Views/RegistrationPage";
 import LandingPageViewController from './View Controllers/LandingPageViewController.js';
+import RegistrationSuccess from "./Views/RegistrationSuccess";
+import OnBehalf from "./Views/OnBehalf"
+import UnderReview from './Views/UnderReview';
+import EmailConfirmation from './Views/EmailConfirmation';
 
 
 
@@ -28,6 +32,9 @@ const App = () => (
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistration/>} />
+        <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
+        <Route path="/underreview" element={<UnderReview/>} />
+        <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
       </Routes>
     
   </React.StrictMode>
