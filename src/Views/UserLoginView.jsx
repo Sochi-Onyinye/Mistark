@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserLogin.css";
+import "./UserLoginView.css";
 import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import {  ArrowRightSquareFill } from "react-bootstrap-icons";
@@ -9,7 +9,7 @@ import UserFeed from "./UserFeed";
 import LandingPage from "./LandingPage";
 
 
-class UserLogin extends React.Component{
+class UserLoginView extends React.Component{
   render() {
     return (
       <div>
@@ -41,4 +41,4 @@ class UserLogin extends React.Component{
     );
   }
 }
-export default UserLogin
+export default UserLoginView

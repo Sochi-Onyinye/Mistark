@@ -8,7 +8,7 @@ import logo from '../others/logo.png'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import UserLogin from "./UserLogin";
+import UserLogin from "./UserLoginView";
 import RegistrationPage from "./RegistrationPage";
 
 import './Navbar.css';

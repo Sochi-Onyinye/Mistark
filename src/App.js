@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './Views/Navbar.jsx';
-import UserLogin from './Views/UserLogin.jsx';
+import UserLogin from './Views/UserLoginView.jsx';
 import BusinessLogin from './Views/BusinessLogin.jsx';
 import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
