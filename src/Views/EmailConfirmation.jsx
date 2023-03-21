@@ -1,13 +1,14 @@
 import React from "react"
-import "./RegistrationSuccess.css";
+import "./EmailConfirmation.css";
 import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
+import {  SendFill } from "react-bootstrap-icons";
 
-import UserLogin from "./UserLogin";
 import LandingPage from "./LandingPage";
 
-class RegistrationSuccess extends React.Component{
+
+class EmailConfirmation extends React.Component{
   render() {
     return (
       <div>
@@ -20,8 +21,8 @@ class RegistrationSuccess extends React.Component{
               <div className="card loginCard">
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
-                  <h5>Your email has been confirmed successfully!</h5>
-                  <p>Click <Link to="/login" component={UserLogin} id="underline">here</Link> to continue to login page</p>
+                  <h5>Email Confirmation <SendFill id="loginicon"/></h5>
+                  <p>Email has been successfully sent to ...insert email here..</p>
                   </div>
               </div>
             </div>
@@ -32,4 +33,4 @@ class RegistrationSuccess extends React.Component{
     );
   }
 }
-export default RegistrationSuccess
+export default EmailConfirmation

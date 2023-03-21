@@ -11,6 +11,8 @@ import BusinessRegistration from "./Views/BusinessRegistration";
 import RegistrationPage from "./Views/RegistrationPage";
 import RegistrationSuccess from "./Views/RegistrationSuccess";
 import OnBehalf from "./Views/OnBehalf"
+import UnderReview from './Views/UnderReview';
+import EmailConfirmation from './Views/EmailConfirmation';
 
 
 
@@ -30,6 +32,8 @@ const App = () => (
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistration/>} />
         <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
+        <Route path="/underreview" element={<UnderReview/>} />
+        <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
       </Routes>
     
   </React.StrictMode>
