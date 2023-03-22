@@ -35,6 +35,7 @@ const App = () => (
         <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
         <Route path="/underreview" element={<UnderReview/>} />
         <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
+        <Route path="/onbehalf" element={<OnBehalf/>} />
       </Routes>
     
   </React.StrictMode>
