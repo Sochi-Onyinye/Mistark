@@ -10,6 +10,10 @@ import BusinessRegistration from "./Views/BusinessRegistration.jsx";
 import BusinessPage from "./Views/BusinessPage.jsx";
 import RegistrationPage from "./Views/RegistrationPage.jsx";
 import LandingPageViewController from './View Controllers/LandingPageViewController.js';
+import RegistrationSuccess from "./Views/RegistrationSuccess.jsx";
+import OnBehalf from "./Views/OnBehalf.jsx"
+import UnderReview from './Views/UnderReview.jsx';
+import EmailConfirmation from './Views/EmailConfirmation.jsx';
 
 
 
@@ -28,6 +32,9 @@ const App = () => (
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistration/>} />
+        <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
+        <Route path="/underreview" element={<UnderReview/>} />
+        <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
       </Routes>
     
   </React.StrictMode>
