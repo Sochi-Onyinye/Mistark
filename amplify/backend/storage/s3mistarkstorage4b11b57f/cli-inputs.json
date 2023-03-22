@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3mistarkstorage4b11b57f",
+  "bucketName": "mistark-storage-4b11b57f",
+  "policyUUID": "40f24b3c",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

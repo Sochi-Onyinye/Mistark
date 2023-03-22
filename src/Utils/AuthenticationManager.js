@@ -50,18 +50,25 @@ function listenToAutoSignInEvent() {
     })
 }
 
-async function signIn(username, password) {
+export async function signIn(username, password) {
     try {
         const user = await Auth.signIn(username, password);
+        return true
     } catch (error) {
         console.log('error signing in', error);
+        return false
     }
 }
 
-async function signOut() {
+export async function signOut() {
     try {
         await Auth.signOut();
     } catch (error) {
         console.log('error signing out: ', error);
     }
+}
+
+export const emailValidator = email => {
+    const emailRegex = /^[^\s@]+@[^\s@]+$/;
+    return emailRegex.test(email)
 }
