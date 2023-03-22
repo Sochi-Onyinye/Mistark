@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './Views/Navbar.jsx';
 import UserLogin from './Views/UserLoginView.jsx';
-import BusinessLogin from './Views/BusinessLogin.jsx';
+import BusinessLogin from './Views/BusinessLoginView.jsx';
 import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
 import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
@@ -10,6 +10,7 @@ import BusinessRegistration from "./Views/BusinessRegistration.jsx";
 import BusinessPage from "./Views/BusinessPage.jsx";
 import RegistrationPage from "./Views/RegistrationPage.jsx";
 import LandingPageViewController from './View Controllers/LandingPageViewController.js';
+import UserLoginViewController from './View Controllers/UserLoginViewController.js';
 import RegistrationSuccess from "./Views/RegistrationSuccess.jsx";
 import OnBehalf from "./Views/OnBehalf.jsx"
 import UnderReview from './Views/UnderReview.jsx';
@@ -21,7 +22,7 @@ const App = () => (
   <React.StrictMode>
       <NavBar/>
       <Routes>
-        <Route path="/login" element={<UserLogin/>} />
+        <Route path="/login" element={<UserLoginViewController/>} />
         <Route path="/registration" element={<RegistrationPage/>} />
         <Route path="/navbar" element={<NavBar/>} />
         <Route path="/" element={<LandingPageViewController/>} />
