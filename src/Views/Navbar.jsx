@@ -11,7 +11,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import UserLogin from "./UserLogin";
 import RegistrationPage from "./RegistrationPage";
 
-import './Navbar.css';
+import './NavBar.css';
 
 class NavBar extends React.Component{
   render() {
