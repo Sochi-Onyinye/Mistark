@@ -16,15 +16,15 @@ import UnderReview from './Views/UnderReview.jsx';
 import EmailConfirmation from './Views/EmailConfirmation.jsx';
 import UserRegistrationViewController from './View Controllers/UserRegistrationViewController.js';
 import VerifyRegistrationViewController from './View Controllers/VerifyRegistrationViewController.js';
-
+import NavPanel from './Views/NavPanel.jsx'
 
 const App = () => (
   <React.StrictMode>
-      <NavBar/>
       <Routes>
         <Route path="/login" element={<UserLoginViewController/>} />
         <Route path="/registration" element={<RegistrationPage/>} />
         <Route path="/navbar" element={<NavBar/>} />
+        <Route path="/navpanel" element={<NavPanel/>} />
         <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeed/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
@@ -37,6 +37,7 @@ const App = () => (
         <Route path="/underreview" element={<UnderReview/>} />
         <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
         <Route path="/verifyRegistration/:username" element={<VerifyRegistrationViewController/>} />
+        <Route path="/onbehalf" element={<OnBehalf/>} />
       </Routes>
     
   </React.StrictMode>

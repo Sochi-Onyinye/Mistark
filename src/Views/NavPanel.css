@@ -1,0 +1,70 @@
+.navbar {
+    background-color: #10CD94;
+    color: #fff;
+    padding: 0 important;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+#buttons{
+    margin: 10px;
+    float: right;
+}
+
+.navbar-collapse{
+    flex-grow: 0 !important;
+}
+
+#logo {
+    margin-left: 15px;
+    
+}
+
+#login, #register{
+    margin: 7px 10px;
+}
+
+#loginicon, #registericon{
+    margin-left: 4px;
+}
+
+#searchNav{
+    margin: 0 !important;
+    position: relative;
+    top: -12px;
+    right:200px;
+}
+
+#Search{
+    position: relative;
+    top: 18px;
+    right: 230px;
+    color: #fff;
+    font-size: 20px;
+}
+
+#Person{
+    font-size: 25px;
+    margin:15px 10px 0 10px;
+    position: relative;
+    top: 0;
+    right: -20px;
+
+}
+
+#user{
+    margin:17px 10px 0 10px;
+    position: relative;
+    top: 0;
+    right: -15px;
+}
+
+#Home, #About, #Help{
+    color: #198754;
+    text-decoration: none;
+    margin: 18px 10px 0 10px;
+
+}
