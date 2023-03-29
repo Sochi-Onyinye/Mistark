@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './Views/Navbar.jsx';
+import NavBar from './Views/NavBar.jsx';
 import UserLogin from './Views/UserLogin.jsx';
 import BusinessLogin from './Views/BusinessLogin.jsx';
 import UserRegistration from './Views/UserRegistration.jsx';
@@ -14,16 +14,17 @@ import RegistrationSuccess from "./Views/RegistrationSuccess.jsx";
 import OnBehalf from "./Views/OnBehalf.jsx"
 import UnderReview from './Views/UnderReview.jsx';
 import EmailConfirmation from './Views/EmailConfirmation.jsx';
+import NavPanel from './Views/NavPanel.jsx'
 
 
 
 const App = () => (
   <React.StrictMode>
-      <NavBar/>
       <Routes>
         <Route path="/login" element={<UserLogin/>} />
         <Route path="/registration" element={<RegistrationPage/>} />
         <Route path="/navbar" element={<NavBar/>} />
+        <Route path="/navpanel" element={<NavPanel/>} />
         <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeed/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
@@ -35,6 +36,7 @@ const App = () => (
         <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
         <Route path="/underreview" element={<UnderReview/>} />
         <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
+        <Route path="/onbehalf" element={<OnBehalf/>} />
       </Routes>
     
   </React.StrictMode>

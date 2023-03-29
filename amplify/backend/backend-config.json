@@ -59,5 +59,12 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "storage": {
+    "s3mistarkstorage4b11b57f": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
   }
 }

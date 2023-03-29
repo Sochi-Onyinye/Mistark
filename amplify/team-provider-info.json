@@ -17,6 +17,9 @@
       },
       "api": {
         "mistark": {}
+      },
+      "storage": {
+        "s3mistarkstorage4b11b57f": {}
       }
     }
   }
