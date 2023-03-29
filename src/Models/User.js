@@ -1,18 +1,26 @@
-import {v4 as uuidv4} from 'uuid';
-	
 export default class User{
-	user_id = uuidv4();
-
-	constructor(fname, lname, email, password) {
+	constructor(id, fname, lname, email, password, dob, phoneNumber) {
+		this.id = id
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.password = password;
+		this.dob = dob;
+		this.phoneNumber = phoneNumber;
 	}
 	
 	getID() {
-		return this.user_id;
+		return this.id;
 	}
+
+	getDOB() {
+		return this.dob;
+	}
+
+	getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
 
 	getFName() {
 		return this.fname;
@@ -30,10 +38,6 @@ export default class User{
 		return this.email;
 	}
 
-	validatePassword(given_password) {
-		return this.password == given_password;
-	}
-
 	setFName(new_name) {
 		this.fname = new_name;
 	}
@@ -48,5 +52,17 @@ export default class User{
 
 	setPassword(new_password) {
 		this.password = new_password;
+	}
+
+	getPassword() {
+		return this.password;
+	}
+
+	setDOB(dob) {
+		this.dob =  dob;
+	}
+
+	setPhoneNumber(phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 }

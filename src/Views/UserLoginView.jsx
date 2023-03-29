@@ -1,16 +1,14 @@
 import React from "react";
-import "./UserLogin.css";
+import "./UserLoginView.css";
 import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import {  ArrowRightSquareFill } from "react-bootstrap-icons";
 import { XSquareFill } from "react-bootstrap-icons";
-
 import UserFeed from "./UserFeed";
 import LandingPage from "./LandingPage";
 
-
-class UserLogin extends React.Component{
-  render() {
+export default function UserLoginView(props) {
+  const {onSubmit, handleChange} = props
     return (
       <div>
         <div class="bg">
@@ -24,12 +22,9 @@ class UserLogin extends React.Component{
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Login as a customer?</h5>
 
-                  <div id='inputId'> 
-                    <input className='form-control sr-only' placeholder="Email" type='email'/>
-                    <input className='form-control sr-only'  placeholder="Password"  type='password'/>
-                  </div>
-
-                  <Link to="/userfeed" component={UserFeed} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Login  <ArrowRightSquareFill id="loginicon"/></button></Link>
+                  <input className='form-control sr-only' placeholder="Email" type='email' name="email" onChange={handleChange}/>
+                  <input className='form-control sr-only'  placeholder="Password"  type='password' name="password" onChange={handleChange}/>
+                  <button type="button" class="btn btn-success btn-sm" id="signinOne">Login  <ArrowRightSquareFill id="loginicon" onClick={onSubmit}/></button>
 
                   <Link to="/businesslogin" component={UserFeed} id="underline"><p id="signinToo">Sign in as business?</p></Link>
                   <p id="forgot">Forgot Password? | Click <a href="reset password" id="underline">here</a></p>
@@ -39,8 +34,5 @@ class UserLogin extends React.Component{
           </div>
         </div>
       </div>
-       
     );
   }
-}
-export default UserLogin

@@ -38,15 +38,14 @@
             "REQUIRES_SYMBOLS",
             "REQUIRES_UPPERCASE"
           ],
-          "passwordPolicyMinLength": 8
+          "passwordPolicyMinLength": 10
         },
         "signupAttributes": [
           "EMAIL",
           "PHONE_NUMBER",
-          "PREFERRED_USERNAME",
           "FAMILY_NAME",
           "GIVEN_NAME",
-          "GENDER"
+          "BIRTHDATE"
         ],
         "socialProviders": [],
         "usernameAttributes": [

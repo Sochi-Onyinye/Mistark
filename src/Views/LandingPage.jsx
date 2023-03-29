@@ -5,6 +5,8 @@ import "./LandingPage.css";
 import LandingPageGrid from "./LandingPageGrid.jsx";
 
 export default function LandingPage(props) {
+  const {title} = props;
+  console.log(title)
     return (
       <div>
         <NavBar/>
