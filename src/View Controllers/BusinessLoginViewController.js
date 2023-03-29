@@ -4,6 +4,7 @@ import UserLoginView from '../Views/UserLoginView.jsx'
 import { emailValidator, signIn } from "../Utils/AuthenticationManager.js"; 
 import { useNavigate } from "react-router-dom";
 
+
 export default function BusinessLoginViewController() {
     const [input, setInput] = useState({ email: '', password: '' });
     let navigate = useNavigate();

@@ -11,9 +11,10 @@ import LandingPage from "./LandingPage";
 import OnBehalf from "./OnBehalf"
 
 
-class UserLogin extends React.Component{
-  render() {
-    return (
+export default function UserRegistrationView(props){
+  const {handleChange, onSubmit} = props
+
+  return (
       <div>
         <div class="bg">
           <img src={background} alt="" />
@@ -26,22 +27,22 @@ class UserLogin extends React.Component{
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Customer Registration</h5>
 
-                      <input className='form-control sr-only' id='firstname' placeholder="Firstname" type='text'/>
-                      <input className='form-control sr-only' id='lastname'  placeholder="Lastname"  type='text'/>
+                      <input className='form-control sr-only' id='firstname' placeholder="First Name" type='text' name='firstName' onChange={handleChange}/>
+                      <input className='form-control sr-only' id='lastname'  placeholder="Last Name"  type='text' name='lastName' onChange={handleChange}/>
 
-                    <input className='form-control sr-only' id='email' placeholder="Email" type='email'/>
+                    <input className='form-control sr-only' id='email' placeholder="Email" type='email' name='email' onChange={handleChange}/>
 
                     <div className="row datel">
-                      <input className='form-control sr-only col-5' id='date' placeholder="DOB (mm/dd/yyyy)" type='date'/>
-                      <input className='form-control sr-only col-7' id='phone'  placeholder="(000)-000-0000"  type='tel'/>
+                      <input className='form-control sr-only col-5' id='date' placeholder="DOB (mm/dd/yyyy)" type='date' name='dob' onChange={handleChange}/>
+                      <input className='form-control sr-only col-7' id='phone'  placeholder="(000)-000-0000"  type='tel' name='phoneNumber' onChange={handleChange}/>
                     </div>
 
-                    <input className='form-control sr-only col-10' id='password'  placeholder="Password"  type='password'/>
+                    <input className='form-control sr-only col-10' id='password'  placeholder="Password"  type='password' name='password' onChange={handleChange}/>
 
-                    <p id="passwordpolicy">Passwords must have at least 10 characters and contain at least two of the following: uppercase letters, lowercase letters, numbers, and symbols.</p>
+                    <p id="passwordpolicy">Passwords must have at least 10 characters and contain the following: uppercase letters, lowercase letters, numbers, and symbols.</p>
                 
 
-                  <Link to="/registrationsuccess" component={RegistrationSuccess} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Register  <PencilFill id="loginicon"/></button></Link>
+                  <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onSubmit}>Register  <PencilFill id="loginicon"/></button>
                   <p>Register <Link to="/onbehalf" component={OnBehalf} id="underline">here</Link> on behalf of your favorite business</p>
                   <p>By clicking “Register”,  you agree to MiStark Terms & Condition and Privacy Policy</p>
                 </div>
@@ -53,5 +54,3 @@ class UserLogin extends React.Component{
        
     );
   }
-}
-export default UserLogin

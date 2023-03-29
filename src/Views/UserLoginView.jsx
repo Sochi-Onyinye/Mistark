@@ -24,7 +24,6 @@ export default function UserLoginView(props) {
 
                   <input className='form-control sr-only' placeholder="Email" type='email' name="email" onChange={handleChange}/>
                   <input className='form-control sr-only'  placeholder="Password"  type='password' name="password" onChange={handleChange}/>
-
                   <button type="button" class="btn btn-success btn-sm" id="signinOne">Login  <ArrowRightSquareFill id="loginicon" onClick={onSubmit}/></button>
 
                   <Link to="/businesslogin" component={UserFeed} id="underline"><p id="signinToo">Sign in as business?</p></Link>

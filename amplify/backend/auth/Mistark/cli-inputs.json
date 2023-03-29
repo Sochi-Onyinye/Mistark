@@ -2,8 +2,8 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "mistar27c72b49",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "mistar4a9a515b",
     "userPoolName": "Mistark",
     "autoVerifiedAttributes": [
       "email"
@@ -14,10 +14,10 @@
     ],
     "smsAuthenticationMessage": "Your login code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "Mistark Registration Verfication: {####}",
+    "emailVerificationMessage": "Please type in the code to finish the registration process: {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
+    "passwordPolicyMinLength": 10,
     "passwordPolicyCharacters": [
       "Requires Lowercase",
       "Requires Numbers",
@@ -27,19 +27,18 @@
     "requiredAttributes": [
       "email",
       "phone_number",
-      "preferred_username",
       "family_name",
       "given_name",
-      "gender"
+      "birthdate"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Mistar27c72b49_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "Mistar4a9a515b_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "27c72b49",
+    "sharedId": "4a9a515b",
     "resourceName": "Mistark",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
@@ -67,6 +66,7 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUI": false
   }
 }
