@@ -6,9 +6,9 @@ import { PencilFill } from "react-bootstrap-icons";
 import { XSquareFill } from "react-bootstrap-icons";
 
 
-import RegistrationSuccess from "./RegistrationSuccess";
 import LandingPage from "./LandingPage";
 import OnBehalf from "./OnBehalf"
+import EmailConfirmation from "./EmailConfirmation";
 
 
 class UserLogin extends React.Component{
@@ -41,7 +41,7 @@ class UserLogin extends React.Component{
                     <p id="passwordpolicy">Passwords must have at least 10 characters and contain at least two of the following: uppercase letters, lowercase letters, numbers, and symbols.</p>
                 
 
-                  <Link to="/registrationsuccess" component={RegistrationSuccess} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Register  <PencilFill id="loginicon"/></button></Link>
+                  <Link to="/emailconfirmation" component={EmailConfirmation} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Register  <PencilFill id="loginicon"/></button></Link>
                   <p>Register <Link to="/onbehalf" component={OnBehalf} id="underline">here</Link> on behalf of your favorite business</p>
                   <p>By clicking “Register”,  you agree to MiStark Terms & Condition and Privacy Policy</p>
                 </div>
