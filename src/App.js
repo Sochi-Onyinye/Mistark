@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './Views/Navbar.jsx';
+import NavBar from './Views/NavBar.jsx';
 import BusinessLogin from './Views/BusinessLoginView.jsx';
-import UserRegistration from './Views/UserRegistrationView.jsx';
+import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
 import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
 import BusinessRegistration from "./Views/BusinessRegistration.jsx";

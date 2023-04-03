@@ -26,7 +26,7 @@ class NavPanel extends React.Component{
                   </div>
                   <Link to="/userfeed" component={UserFeed} id="Home">Home</Link>
                   <Link id="About">About</Link> 
-                  <Link id="Help">Weeeeeeeeelp</Link> 
+                  <Link id="Help">Help</Link> 
                    <PersonCircle id="Person"/>
                    <span id="user">User</span>
                 </Nav>

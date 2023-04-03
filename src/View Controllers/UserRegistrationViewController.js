@@ -1,7 +1,7 @@
 import {React, useCallback, useState} from "react";
 import { emailValidator, signUp, confirmSignUp} from "../Utils/AuthenticationManager.js"; 
 import { useNavigate } from "react-router-dom";
-import UserRegistrationView from '../Views/UserRegistrationView.jsx'
+import UserRegistration from '../Views/UserRegistration.jsx'
 import {v4 as genID} from 'uuid';
 import User from '../Models/User.js'
 import UserLoginView from "../Views/UserLoginView.jsx";
@@ -29,5 +29,5 @@ export default function UserRegistrationViewController({navigation}) {
         }
 	};
 
-    return (<UserRegistrationView onSubmit={formSubmitter} handleChange={handleChange}/>)
+    return (<UserRegistration onSubmit={formSubmitter} handleChange={handleChange}/>)
 }
