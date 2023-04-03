@@ -9,8 +9,8 @@ import LandingPage from "./LandingPage";
 import BusinessAnalytics from "./BusinessAnalytics";
 
 
-class BusinessLogin extends React.Component{
-  render() {
+export default function BusinessLoginView(props) {
+  const {handleChange, onSubmit} = props;
     return (
       <div>
         <div class="bg">
@@ -24,10 +24,10 @@ class BusinessLogin extends React.Component{
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Login as a Business?</h5>
 
-                  <input className='form-control sr-only' placeholder="Email" type='email'/>
-                  <input className='form-control sr-only'  placeholder="Password"  type='password'/>
+                  <input className='form-control sr-only' placeholder="Email" type='email' name='email' onChange={handleChange}/>
+                  <input className='form-control sr-only'  placeholder="Password"  type='password' name='password' onChange={handleChange}/>
 
-                  <Link to="/businessanalytics" component={BusinessAnalytics} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Login  <ArrowRightSquareFill id="loginicon"/></button></Link>
+                <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onSubmit}>Login  <ArrowRightSquareFill id="loginicon"/></button>
 
                   <Link to="/login" component={BusinessAnalytics} id="underline"><p id="signinToo">Sign in as a customer?</p></Link>
                   <p id="forgot">Forgot Password? | Click <a href="reset password" id="underline">here</a></p>
@@ -39,6 +39,4 @@ class BusinessLogin extends React.Component{
       </div>
        
     );
-  }
-}
-export default BusinessLogin
+    }

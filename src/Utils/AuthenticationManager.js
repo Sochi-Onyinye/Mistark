@@ -1,25 +1,28 @@
 import { Auth, Hub } from 'aws-amplify';
 
-async function signUp(newUser) {
+export async function signUp(newUser) {
     try {
         const { user } = await Auth.signUp({
-            username: newUser.getUsername(),
-            password: newUser.getPassword(),
+            username : newUser.getEmail(),
+            password : newUser.getPassword(),
             attributes: {
-                email:newUser.getEmail(),
+                email : newUser.getEmail(),
+                family_name : newUser.getLName(),
+                given_name : newUser.getFName(),
                 phone_number: newUser.getPhoneNumber(),
+                birthdate: newUser.getDOB(),
             },
             autoSignIn: {
                 enabled: true,
             }
         });
-        console.log(user);
+        return user
     } catch (error) {
-        console.log('error signing up:', error);
+        return error
     }
 }
 
-async function resendConfirmationCode(username) {
+export async function resendConfirmationCode(username) {
     try {
         await Auth.resendSignUp(username);
         console.log('code resent successfully');
@@ -29,7 +32,7 @@ async function resendConfirmationCode(username) {
 }
 
 
-async function confirmSignUp(username, code) {
+export async function confirmSignUp(username, code) {
     try {
         await Auth.confirmSignUp(username, code, { forceAliasCreation: false });
     } catch (error) {
@@ -50,18 +53,25 @@ function listenToAutoSignInEvent() {
     })
 }
 
-async function signIn(username, password) {
+export async function signIn(username, password) {
     try {
         const user = await Auth.signIn(username, password);
+        return true
     } catch (error) {
         console.log('error signing in', error);
+        return false
     }
 }
 
-async function signOut() {
+export async function signOut() {
     try {
         await Auth.signOut();
     } catch (error) {
         console.log('error signing out: ', error);
     }
+}
+
+export const emailValidator = email => {
+    const emailRegex = /^[^\s@]+@[^\s@]+$/;
+    return emailRegex.test(email)
 }

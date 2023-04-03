@@ -4,7 +4,7 @@ import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
 
-import UserLogin from "./UserLogin";
+import UserLoginView from "./UserLoginView";
 import LandingPage from "./LandingPage";
 
 class RegistrationSuccess extends React.Component{
@@ -21,7 +21,7 @@ class RegistrationSuccess extends React.Component{
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Your email has been confirmed successfully!</h5>
-                  <p>Click <Link to="/login" component={UserLogin} id="underline">here</Link> to continue to login page</p>
+                  <p>Click <Link to="/login" component={UserLoginView} id="underline">here</Link> to continue to login page</p>
                   </div>
               </div>
             </div>
