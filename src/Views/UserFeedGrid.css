@@ -1,0 +1,49 @@
+#recommend{
+    color: white !important;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 40px;
+  }
+  
+  .gridbody{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .one, .two{
+    padding : 10px !important;
+  }
+  
+  #userfeedcard{
+    width: 280px;
+    margin: 20px;
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  
+  /* Extra small devices (phones, 768px and down) */
+  
+  @media only screen and (max-width: 740px) {
+    .card{
+      width: 280px;
+      margin: 20px;
+      color: #fff;
+      font-size: 15px;
+      margin-left: 40px !important;
+    }
+  }
+  
+  
+  @media (min-width: 740px) and (max-width: 1024px) {
+    .card{
+      width: 280px;
+      margin: 20px;
+      color: #fff;
+      font-size: 15px;
+      margin-left: 40px !important;
+    }
+  
+    
+  }
+  
