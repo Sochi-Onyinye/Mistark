@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
 
 import BusinessRegistration from "./BusinessRegistration";
-import UserRegistration from "./UserRegistrationView";
+import UserRegistration from "./UserRegistration";
 import LandingPage from "./LandingPage";
 
 class RegistrationPage extends React.Component{
