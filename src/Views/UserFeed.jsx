@@ -6,7 +6,6 @@ import UserFeedGrid from "./UserFeedGrid";
 
 export default function UserFeed(props)  {
   const {businessname} = props;
-  console.log(businessname)
     return (
       <div>
         <NavPanel/>

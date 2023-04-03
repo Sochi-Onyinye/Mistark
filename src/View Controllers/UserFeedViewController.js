@@ -1,6 +1,7 @@
 import UserFeed from "../Views/UserFeed";
 import { useEffect, useState, useCallback} from "react";
 import { fetchAllBusinessesFromDatabase } from "../Utils/DatabaseManager";
+import UserFeedGrid from "../Views/UserFeedGrid";
 
 export default function UserFeedViewController() {
     const [businesses, setBusinessesCards] = useState();
@@ -18,7 +19,7 @@ export default function UserFeedViewController() {
                 if (business === null) {
                     return null
                 }
-                return ();
+                return (<UserFeedGrid businessName={business.getName()} />);
             });
             setBusinessesCards(businessCards) 
         }
@@ -30,5 +31,5 @@ export default function UserFeedViewController() {
         navigate(`/businesses:${business.getID()}`);
     },[])
 
-return (<UserFeed onChangeFilter={setFilter}></UserFeed>)
+return (<UserFeed onChangeFilter={setFilter} ></UserFeed>)
 }
