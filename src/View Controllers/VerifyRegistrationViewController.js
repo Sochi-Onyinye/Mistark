@@ -1,7 +1,7 @@
 import { Navigate, useParams } from "react-router-dom";
 import {useState} from "react";
 import {resendConfirmationCode, confirmSignUp, signIn } from "../Utils/AuthenticationManager.js"; 
-import VerifyRegistrationView from "../Views/VerifyRegistrationView.jsx";
+import EmailConfirmation from "../Views/EmailConfirmation.jsx";
 
 export default function VerifyRegistrationViewController() {
     const [validationCode, setValidationCode] = useState('')
@@ -17,5 +17,5 @@ export default function VerifyRegistrationViewController() {
         }
 };
 
-return (<VerifyRegistrationView/>)
+return (<EmailConfirmation/>)
 }

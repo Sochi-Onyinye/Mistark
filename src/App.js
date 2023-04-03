@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './Views/NavBar.jsx';
 import BusinessLogin from './Views/BusinessLoginView.jsx';
-import UserRegistration from './Views/UserRegistrationView.jsx';
+import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
 import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
 import BusinessRegistration from "./Views/BusinessRegistration.jsx";
@@ -38,6 +38,7 @@ const App = () => (
         <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
         <Route path="/verifyRegistration/:username" element={<VerifyRegistrationViewController/>} />
         <Route path="/onbehalf" element={<OnBehalf/>} />
+        <Route path="/businesspage" element={<BusinessPage/>} />
       </Routes>
     
   </React.StrictMode>

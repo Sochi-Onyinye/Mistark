@@ -59,6 +59,7 @@
   
   h2, p {
     color: #00593E !important;
+    font-size: 11px !important;
   }
   
   h5{
@@ -67,6 +68,10 @@
     
   }
   
+  #invalid {
+    color:red;
+    font-size:9px;
+  }
   
   
   
