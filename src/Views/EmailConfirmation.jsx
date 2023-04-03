@@ -24,11 +24,11 @@ class EmailConfirmation extends React.Component{
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Enter your verification code<SendFill id="loginicon"/></h5>
-                  <p>A one time Overification pin has been sent to....this email.... Please enter the code that you received to verify your email.</p>
+                  <p>A one time verification pin has been sent to....this email.... Please enter the code that you received to verify your email.</p>
 
-                  <input className='form-control sr-only' id='verificationpin' placeholder="OTP" type='number'/>
-
-                  <Link to="/registrationsuccess" component={RegistrationSuccess} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Send  <PencilFill id="loginicon"/></button></Link>
+                  <input className='form-control sr-only' id='verificationpin' name = "OTP" placeholder="OTP" type='text'/>
+                  <h6 id="invalid">Invalid OTP. Kindly re-enter pin ... </h6>
+                  <Link to="/registrationsuccess" component={RegistrationSuccess} ><button type="button" class="btn btn-success btn-sm" id="signinOne">Verify  <PencilFill id="loginicon"/></button></Link>
                   </div>
               </div>
             </div>
