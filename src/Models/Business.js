@@ -1,20 +1,16 @@
-import {v4 as uuidv4} from 'uuid';
-
-class Business {
-
-	business_id = uuidv4();
-
-	constructor(name, owners, description, location, hours, category, products, reviews) {
+export default class Business {
+	constructor(id, name, owner, description, location, hours, category) {
+		this.id = id
 		this.name = name;
-		this.owners = pwners;
+		this.owner = owner;
 		this.description = description;
 		this.location = location;
 		this.hours = hours;
 		this.category = category;
 	}
 
-	getBusinessId() {
-		return this.business_id;
+	getID() {
+		return this.id;
 	}
 	
 	getName() {

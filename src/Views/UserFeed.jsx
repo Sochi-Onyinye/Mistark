@@ -2,7 +2,7 @@ import React from "react"
 import "./UserFeed.css";
 import NavPanel from "./NavPanel";
 
-class UserFeed extends React.Component{
+class UserFeed extends React.Component {
   render() {
     return (
       <div>
