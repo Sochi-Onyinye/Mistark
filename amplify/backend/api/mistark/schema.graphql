@@ -30,8 +30,10 @@ type Review @model @auth(rules: [{allow: public}]) {
   id: ID!
   userID: ID!
   user: User @hasOne(fields: ["userID"])
-  overallRating: Int!
-  BusinessID: ID! @index(name: "byBusiness", sortKeyFields: ["overallRating"])
+  moneyRating: Int!
+  serviceRating: Int!
+  locationRating: Int!
+  BusinessID: ID! @index(name: "byBusiness")
   Business: Business @hasOne(fields: ["BusinessID"])
   content: String!
 }
