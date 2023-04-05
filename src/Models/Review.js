@@ -3,11 +3,13 @@ import {v4 as uuidv4} from 'uuid';
 class Review{
 	review_id = uuidv4();
 
-	constructor(commenter, business, text, rating, createdAt) {
+	constructor(commenter, business, text, m_rating, s_rating, l_rating, createdAt) {
 		this.user_id = commenter;
 		this.business = business;
 		this.text = text;
-		this.rating = rating;
+		this.money_rating = m_rating;
+		this.service_rating = s_rating;
+		this.location_rating = l_rating;
 		this.createdAt = createdAt;
 	}
 
@@ -27,8 +29,16 @@ class Review{
 		return this.text;
 	}
 
-	getRating() {
-		return this.rating;
+	getMoneyRating() {
+		return this.money_rating;
+	}
+
+	getServiceRating() {
+		return this.service_rating;
+	}
+
+	getLocationRating() {
+		return this.location_rating;
 	}
 
 	getCreatedAt() {
@@ -47,7 +57,15 @@ class Review{
 		this.text = text;
 	}
 
-	setRating(new_rating) {
-		this.rating = rating;
+	setMoneyRating(new_rating) {
+		this.money_rating = new_rating;
+	}
+
+	setServiceRating(new_rating) {
+		this.service_rating = new_rating;
+	}
+
+	setLocationRating(new_rating) {
+		this.location_rating = new_rating;
 	}
 }

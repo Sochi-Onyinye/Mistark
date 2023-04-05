@@ -31,6 +31,23 @@ export async function uploadBusinessDatabase(businessOwner) {
     }
 }
 
+export async function uploadReviewToDatabase(review) {
+    let reviewDetails = {
+        'id': review.getReviewId(),
+        'userID' : review.getUserID(),
+        'BusinessID': review.getBusinessID(),
+        'content': review.getText(),
+        'moneyRating': review.getMoneyRating(),
+        'serviceRating' : review.getServiceRating(),
+        'locationRating': review.getLocationRating(),
+    };
+    try {
+        await API.graphql(graphqlOperation(mutations.createReview, { input: reviewDetails}));
+    } catch(e) {
+        console.log(e)
+    }
+}
+
 export async function fetchAllBusinessesFromDatabase() {
     try {
         const businesses = await API.graphql(graphqlOperation(queries.listBusinesses));
@@ -81,3 +98,4 @@ async function createBusinessesCategoryFromDatabaseMap(categories) {
     })
     return list_of_categories;
 }
+
