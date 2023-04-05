@@ -7,9 +7,9 @@ import User from '../Models/User.js'
 import UserLoginView from "../Views/UserLoginView.jsx";
 import UserLoginViewController from "../View Controllers/UserLoginViewController.js"
 
-export default function UserRegistrationViewController({navigation}) {
+export default function UserRegistrationViewController() {
     const [input, setInput] = useState({ email: '', password: '', firstName:'', lastName:'', dob:'', phoneNumber:'' });
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState(null)
     let navigate = useNavigate();
     const handleChange = (e) => {
         e.preventDefault();
@@ -19,15 +19,16 @@ export default function UserRegistrationViewController({navigation}) {
     const formSubmitter = async (e) => {
         e.preventDefault();
         console.log(input)
-        const user = new User(genID(), input.firstName, input.lastName,input.email, input.password, input.dob, input.phoneNumber);
-        const signedUpUser = await signUp(user)
-        if (signedUpUser) { 
-            navigate(`/VerifyRegistration/${user.getEmail()}`);
+        const newUser = new User(genID(), input.firstName, input.lastName,input.email, input.password, input.dob, input.phoneNumber);
+        const {isUserCreated, user, error}= await signUp(newUser);
+
+        if (isUserCreated) { 
+            navigate(`/emailconfirmation/${newUser.getEmail()}`);
         }
         else {
-            setErrorMessage(signedUpUser)
+            setErrorMessage(error.message)
         }
 	};
 
-    return (<UserRegistration onSubmit={formSubmitter} handleChange={handleChange}/>)
+    return (<UserRegistration errorMessage={errorMessage} onSubmit={formSubmitter} handleChange={handleChange}/>)
 }
