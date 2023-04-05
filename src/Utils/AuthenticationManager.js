@@ -91,7 +91,7 @@ export async function signIn(username, password) {
     } catch (err) {
         isUserSignedIn = false;
         error = err;
-        console.log('sdsd',  error);
+
     }
 
     return {
