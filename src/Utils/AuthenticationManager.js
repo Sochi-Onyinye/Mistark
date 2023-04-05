@@ -1,6 +1,9 @@
 import { Auth, Hub } from 'aws-amplify';
 
 export async function signUp(newUser) {
+    var isUserCreated = null;
+    var error = null;
+    var createdUser = null;
     try {
         const { user } = await Auth.signUp({
             username : newUser.getEmail(),
@@ -16,27 +19,50 @@ export async function signUp(newUser) {
                 enabled: true,
             }
         });
-        return user
-    } catch (error) {
-        return error
+        createdUser = user;
+        isUserCreated  = true
+    } catch (err) {
+        isUserCreated  = false;
+        error = err;
+    }
+    return {
+        'isUserCreated':isUserCreated,
+        'error': error, 
+        'user':createdUser
     }
 }
 
 export async function resendConfirmationCode(username) {
+    var error = null;
+    var isCodeResent = null;
     try {
         await Auth.resendSignUp(username);
-        console.log('code resent successfully');
+        isCodeResent = true;
     } catch (err) {
-        console.log('error resending code: ', err);
+        isCodeResent = false;
+        error = err;
+    }
+    return {
+        'isCodeResent':isCodeResent, 
+        'error':error
     }
 }
 
-
 export async function confirmSignUp(username, code) {
+    var isSignUpConfirmed = null;
+    var error = null;
     try {
         await Auth.confirmSignUp(username, code, { forceAliasCreation: false });
-    } catch (error) {
+        isSignUpConfirmed = true
+    } catch (err) {
+        isSignUpConfirmed = false
+        error = err
         console.log('error confirming sign up', error);
+    }
+
+    return {
+        'isSignUpConfirmed':isSignUpConfirmed,
+        'error' : error
     }
 }
 
@@ -54,12 +80,24 @@ function listenToAutoSignInEvent() {
 }
 
 export async function signIn(username, password) {
+    var isUserSignedIn = null;
+    var error = null;
+    var user = null;
+
     try {
-        const user = await Auth.signIn(username, password);
-        return true
-    } catch (error) {
-        console.log('error signing in', error);
-        return false
+        const signedInUser = await Auth.signIn(username, password);
+        isUserSignedIn = true;
+        user = signedInUser
+    } catch (err) {
+        isUserSignedIn = false;
+        error = err;
+        console.log('sdsd',  error);
+    }
+
+    return {
+        'isUserSignedIn' :isUserSignedIn,
+        'user' : user,
+        'error' : error,
     }
 }
 

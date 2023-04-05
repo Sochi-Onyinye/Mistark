@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function UserLoginViewController() {
     const [input, setInput] = useState({ email: '', password: '' });
+    const [errorMessage, setErrorMessage] = useState(null)
     let navigate = useNavigate();
     const handleChange = (e) => {
         e.preventDefault();
@@ -12,15 +13,16 @@ export default function UserLoginViewController() {
     }
 
     const formSubmitter = async (e) => {
+        console.log("clicked")
 		e.preventDefault();
-		// if (!emailValidator(input.email)) return seterrorMessage('Please enter valid email id');
-        const signedIn = await signIn(input.email, input.password)
-        if (signedIn) { 
+        const {isUserSignedIn, user, error} = await signIn(input.email, input.password)
+        if (isUserSignedIn) { 
             navigate(`/userfeed`);
         }
         else {
+            setErrorMessage(error.message);
         }
 	};
     return (
-    <UserLoginView onSubmit={formSubmitter} handleChange={handleChange}/>)
+    <UserLoginView errorMessage={errorMessage} onSubmit={formSubmitter} handleChange={handleChange}/>)
 }

@@ -7,8 +7,7 @@ import { XSquareFill } from "react-bootstrap-icons";
 import UserLoginView from "./UserLoginView";
 import LandingPage from "./LandingPage";
 
-class RegistrationSuccess extends React.Component{
-  render() {
+export default function RegistrationSuccess() {
     return (
       <div>
         <div class="bg">
@@ -30,6 +29,4 @@ class RegistrationSuccess extends React.Component{
       </div>
        
     );
-  }
 }
-export default RegistrationSuccess
