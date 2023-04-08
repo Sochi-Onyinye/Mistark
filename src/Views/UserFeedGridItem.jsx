@@ -1,7 +1,7 @@
 import React from 'react'
 
 export function UserFeedGridItem(props){
-const {businessname, description, onClick, businessImageUrl} = props
+const {businessname, onClick, businessImageUrl} = props
 return (
     <div class="col-9 card bg-success" id="userfeedcard" onClick={onClick}>
         {/* Everything you need to do for the user feed grid should be done within this div*/ }
