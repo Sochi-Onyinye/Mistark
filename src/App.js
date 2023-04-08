@@ -17,6 +17,7 @@ import EmailConfirmationController from './View Controllers/EmailConfirmationCon
 import UserRegistrationViewController from './View Controllers/UserRegistrationViewController.js';
 import VerifyRegistrationViewController from './View Controllers/VerifyRegistrationViewController.js';
 import NavPanel from './Views/NavPanel.jsx'
+import ReviewPage from './Views/ReviewPage.jsx';
 
 const App = () => (
   <React.StrictMode>
@@ -38,6 +39,7 @@ const App = () => (
         <Route path="/emailconfirmation/:username" element={<EmailConfirmationController/>} />
         <Route path="/onbehalf" element={<OnBehalf/>} />
         <Route path="/businesspage" element={<BusinessPage/>} />
+        <Route path="/reviewpage" element={<ReviewPage/>} />
       </Routes>
     
   </React.StrictMode>
