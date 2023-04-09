@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './Views/NavBar.jsx';
 import BusinessLogin from './Views/BusinessLoginView.jsx';
-import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
 import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
 import BusinessRegistration from "./Views/BusinessRegistration.jsx";
@@ -18,6 +17,8 @@ import UserRegistrationViewController from './View Controllers/UserRegistrationV
 import VerifyRegistrationViewController from './View Controllers/VerifyRegistrationViewController.js';
 import NavPanel from './Views/NavPanel.jsx'
 import ReviewPage from './Views/ReviewPage.jsx';
+import ReviewSuccess from './Views/ReviewSuccess.jsx';
+
 
 const App = () => (
   <React.StrictMode>
@@ -41,6 +42,7 @@ const App = () => (
         <Route path="/onbehalf" element={<OnBehalf/>} />
         <Route path="/businesspage" element={<BusinessPage/>} />
         <Route path="/reviewpage" element={<ReviewPage/>} />
+        <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
       </Routes>
     
   </React.StrictMode>

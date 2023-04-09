@@ -8,15 +8,60 @@
     color: #FFF;
     width: auto;
     height: fit-content;
+    margin-left: 50px;
 }
 
 #value, #quality, #loc{
     color:black !important;
-    right:10px;
+    text-indent: 10px;
+    font-size: 20px;
 
 }
 
 #totalrev, #busname{
     color:black !important;
+    text-indent: 10px;
+    font-size: 20px;
 
 }
+
+#textHead{
+    color: rgb(89, 80, 80) !important;
+}
+
+#review{
+    margin-left: 170px;
+}
+.Rate {
+    color: lightblue !important;
+    margin-left: 10px;
+  }
+  
+.Rate:hover {
+    color: orange !important;
+  }
+
+.topStar1{
+    color: lightblue !important;
+    margin-left: 30px;
+}
+.topStar1:hover {
+    color: orange !important;
+  }
+
+.topStar2{
+    color: lightblue !important;
+    margin-left: 40px;
+}
+.topStar2:hover {
+    color: orange !important;
+  }
+
+.topStar3{
+    color: lightblue !important;
+    margin-left: 104px;
+}
+
+.topStar3:hover {
+    color: orange !important;
+  }
