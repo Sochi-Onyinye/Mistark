@@ -1,16 +1,16 @@
 import React from "react";
 import NavPanel from "./NavPanel";
-import "./ReviewSuccess.css";
+import './HelpPage.css' 
 
-class ReviewSuccess extends React.Component{
+class HelpPage extends React.Component{
     render() {
       return (
         <div>
             <NavPanel/>
-            <h3 id="success">Review was a success</h3>
+            <h3 id="help">Help page - team contact info *IT</h3>
         </div>
 
         );
     }
   }
-  export default ReviewSuccess
+  export default HelpPage

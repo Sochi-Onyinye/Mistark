@@ -10,6 +10,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import UserFeed from "./UserFeed";
 
 import './NavPanel.css';
+import AboutPage from "./AboutPage";
+import HelpPage from "./HelpPage";
 
 class NavPanel extends React.Component{
   render() {
@@ -25,8 +27,8 @@ class NavPanel extends React.Component{
                     <input id="searchNav" type="search" class="form-control" placeholder="Search"/>
                   </div>
                   <Link to="/userfeed" component={UserFeed} id="Home">Home</Link>
-                  <Link id="About">About</Link> 
-                  <Link id="Help">Help</Link> 
+                  <Link to="/aboutpage" component={AboutPage} id="About">About</Link> 
+                  <Link to="/helppage" component={HelpPage} id="Help">Help</Link> 
                    <PersonCircle id="Person"/>
                    <span id="user">User</span>
                 </Nav>

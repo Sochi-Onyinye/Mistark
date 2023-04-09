@@ -1,16 +1,17 @@
 import React from "react";
 import NavPanel from "./NavPanel";
-import "./ReviewSuccess.css";
+import './AboutPage.css' 
 
-class ReviewSuccess extends React.Component{
+
+class AboutPage extends React.Component{
     render() {
       return (
         <div>
             <NavPanel/>
-            <h3 id="success">Review was a success</h3>
+            <h3 id="about">About Us</h3>
         </div>
 
         );
     }
   }
-  export default ReviewSuccess
+  export default AboutPage

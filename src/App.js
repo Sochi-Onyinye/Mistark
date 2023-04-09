@@ -18,6 +18,8 @@ import VerifyRegistrationViewController from './View Controllers/VerifyRegistrat
 import NavPanel from './Views/NavPanel.jsx'
 import ReviewPage from './Views/ReviewPage.jsx';
 import ReviewSuccess from './Views/ReviewSuccess.jsx';
+import AboutPage from './Views/AboutPage.jsx';
+import HelpPage from './Views/HelpPage.jsx';
 
 
 const App = () => (
@@ -43,6 +45,8 @@ const App = () => (
         <Route path="/businesspage" element={<BusinessPage/>} />
         <Route path="/reviewpage" element={<ReviewPage/>} />
         <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
+        <Route path="/aboutpage" element={<AboutPage/>} />
+        <Route path="/helppage" element={<HelpPage/>} />
       </Routes>
     
   </React.StrictMode>
