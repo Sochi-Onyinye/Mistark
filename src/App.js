@@ -13,10 +13,11 @@ import UserLoginViewController from './View Controllers/UserLoginViewController.
 import RegistrationSuccess from "./Views/RegistrationSuccess.jsx";
 import OnBehalf from "./Views/OnBehalf.jsx"
 import UnderReview from './Views/UnderReview.jsx';
-import EmailConfirmation from './Views/EmailConfirmation.jsx';
+import EmailConfirmationController from './View Controllers/EmailConfirmationController.js';
 import UserRegistrationViewController from './View Controllers/UserRegistrationViewController.js';
 import VerifyRegistrationViewController from './View Controllers/VerifyRegistrationViewController.js';
 import NavPanel from './Views/NavPanel.jsx'
+import ReviewPage from './Views/ReviewPage.jsx';
 
 const App = () => (
   <React.StrictMode>
@@ -35,10 +36,10 @@ const App = () => (
         <Route path="/userregistration" element={<UserRegistrationViewController/>} />
         <Route path="/registrationsuccess" element={<RegistrationSuccess/>} />
         <Route path="/underreview" element={<UnderReview/>} />
-        <Route path="/emailconfirmation" element={<EmailConfirmation/>} />
-        <Route path="/verifyRegistration/:username" element={<VerifyRegistrationViewController/>} />
+        <Route path="/emailconfirmation/:username" element={<EmailConfirmationController/>} />
         <Route path="/onbehalf" element={<OnBehalf/>} />
         <Route path="/businesspage" element={<BusinessPage/>} />
+        <Route path="/reviewpage" element={<ReviewPage/>} />
       </Routes>
     
   </React.StrictMode>

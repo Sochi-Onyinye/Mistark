@@ -1,0 +1,22 @@
+#businessHeader{
+    color: #FFF;
+    width: auto;
+    height: fit-content;
+}
+
+#ratingCard{ 
+    color: #FFF;
+    width: auto;
+    height: fit-content;
+}
+
+#value, #quality, #loc{
+    color:black !important;
+    right:10px;
+
+}
+
+#totalrev, #busname{
+    color:black !important;
+
+}
