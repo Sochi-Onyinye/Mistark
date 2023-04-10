@@ -1,5 +1,5 @@
 export default class Business {
-	constructor(id, name, owner, description, location, hours, category) {
+	constructor(id, name, owner, description, location, hours, category, profileImage, businessImages) {
 		this.id = id
 		this.name = name;
 		this.owner = owner;
@@ -7,12 +7,23 @@ export default class Business {
 		this.location = location;
 		this.hours = hours;
 		this.category = category;
+		this.profileImage = profileImage
+		this.businessImages = businessImages
 	}
 
 	getID() {
 		return this.id;
 	}
 	
+	getProfileImage() {
+		return this.profileImage
+	}
+
+	getBusinessImages() {
+		return this.businessImages
+	}
+
+
 	getName() {
 		return this.name;
 	}
@@ -54,7 +65,11 @@ export default class Business {
 	}
 
 	setCategory(new_category) {
-		return this.category = new_category;
+		this.category = new_category;
+	}
+
+	setProfileImage(image) {
+		this.profileImage = image
 	}
 
 }

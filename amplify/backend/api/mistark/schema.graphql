@@ -1,13 +1,22 @@
-type Business @model @auth(rules: [{allow: public}]) {
+type Business @model @auth(rules: [{allow: public}]) @searchable {
   id: ID!
   name: String!
   description: String!
-  location: String!
+  address: String!
+  location: Location!
   businessOwnerID: ID @index(name: "byBusinessOwner")
   businessOwner: BusinessOwner @hasOne(fields: ["businessOwnerID"])
   reviews: [Review]! @hasMany(indexName: "byBusiness", fields: ["id"])
   services: [Service]! @hasMany(indexName: "byBusiness", fields: ["id"])
-  categories: [BusinessCategory]! @hasMany
+  categoryID: ID
+  category: BusinessCategory @hasOne(fields: ["id"])
+  profileImage: String!
+  images: [String]
+}
+
+type Location {   
+  lat: Float!   
+  lon: Float! 
 }
 
 type User @model @auth(rules: [{allow: public}]) {
@@ -36,7 +45,7 @@ type Review @model @auth(rules: [{allow: public}]) {
   content: String!
 }
 
-type Service @model @auth(rules: [{allow: public}]) {
+type Service @model @auth(rules: [{allow: public}]) @searchable {
   id: ID!
   title: String!
   description: String!
@@ -46,9 +55,29 @@ type Service @model @auth(rules: [{allow: public}]) {
   businessOwner: Business @hasOne(fields: ["businessID"])
 }
 
-type BusinessCategory @model @auth(rules: [{allow: public}]) {
+type BusinessCategory @model @auth(rules: [{allow: public}]) @searchable {
   id: ID!
   categoryName: String!
   categoryDescription: String!
 }
- 
+
+
+input LocationInput {
+  lat: Float!
+  lon: Float!
+}
+
+type ModelBusinessConnection {
+ items: [Business]
+ total: Int
+ nextToken: String
+}
+
+type Query {
+ nearbyBusinesses(
+   location: LocationInput!, 
+   m: Int, 
+   limit: Int, 
+   nextToken: String
+ ): ModelBusinessConnection
+}

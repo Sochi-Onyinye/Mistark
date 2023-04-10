@@ -5,7 +5,7 @@ import UserFeedGrid from "./UserFeedGrid";
 
 
 export default function UserFeed(props)  {
-  const {businessname} = props;
+  const {businessCards} = props;
     return (
       <div>
         <NavPanel/>
@@ -17,9 +17,8 @@ export default function UserFeed(props)  {
               <p class="card-text" id="morefiltervalue">More Filter Values</p><br></br>
             </div>  
           </div>
-
           <UserFeedGrid>
-            {props.categories}
+            {businessCards}
           </UserFeedGrid>
 
         </div> 
