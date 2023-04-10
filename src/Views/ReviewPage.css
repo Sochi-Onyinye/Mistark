@@ -8,7 +8,7 @@
     color: #FFF;
     width: auto;
     height: fit-content;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 #value, #quality, #loc{
@@ -25,13 +25,36 @@
 
 }
 
+#totalrev{
+    margin-left: 500px;
+    margin-top: -33px;
+}
+
 #textHead{
-    color: rgb(89, 80, 80) !important;
+    color: white!important;
+}
+
+
+#writeRev{
+    width: auto;
+    margin-left: 20px !important;
+    
+}
+
+#img1{
+    width: auto;
+    margin-left: 20px !important;
+    margin-top: 10px;
+}
+#reviewimg, #ratings, #writtenReview{
+    width: auto;
+
 }
 
 #review{
-    margin-left: 170px;
+    margin-left: 1400px;
 }
+
 .Rate {
     color: lightblue !important;
     margin-left: 10px;
@@ -65,3 +88,17 @@
 .topStar3:hover {
     color: orange !important;
   }
+
+#star1, #stars{
+    color: orange;
+
+}
+#star1{
+    margin-left: 500px;
+}
+
+#totalstar{
+    color: black;
+    margin-left: 650px;
+    margin-top: -35px;
+}

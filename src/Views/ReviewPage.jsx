@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 class ReviewPage extends React.Component{
   render() {
-    return (
+    return ( 
       <div>
         <NavPanel/>
         {/*row1 - image and business overall rating*/}
@@ -16,13 +16,15 @@ class ReviewPage extends React.Component{
           <div className="col-8" >
             <div className="card" id="businessHeader"> 
               <h3 id="busname">Business Name</h3>
-              <h3 id="totalrev">Total reviews</h3>
+              <h3 id="totalrev">Total reviews e.g 106 reviews</h3>
+              <h3><StarFill id="star1"/><StarFill id="stars"/><StarFill id="stars"/><StarFill id="stars"/><StarFill id="stars"/></h3>
+              <h3 id="totalstar">5.0</h3>
             </div>  
           </div>
         </div>
          {/*row2 - rating*/}
         <div className="row" id="ratings"> 
-          <div className="col-10">
+          <div className="col-12">
             <div className="card" id="ratingCard">
               <h3 id="value">Value for money <StarFill className="topStar1"/><StarFill className="Rate"/><StarFill className="Rate"/><StarFill className="Rate"/><StarFill className="Rate"/></h3>
               <h3 id="quality">Quality Service <StarFill className="topStar2"/><StarFill className="Rate"/><StarFill className="Rate"/><StarFill className="Rate"/><StarFill className="Rate"/></h3>
@@ -34,10 +36,10 @@ class ReviewPage extends React.Component{
          {/*row3 - written review*/}
         <div className="row" id="writtenReview">
           <div className="col-12">
-            <div className="card" id="writeRev">
+            <div id="writeRev">
               <div class="form-group">
                 <label for="exampleFormControlTextarea1" id="textHead">Any more comments: </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="12"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" ></textarea>
                 <Link to="/reviewsuccess" component={ReviewSuccess} ><button type="button" class="btn btn-success btn-sm" id="review">Submit </button></Link>
               </div>
             </div> 
