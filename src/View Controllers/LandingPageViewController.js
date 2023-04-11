@@ -21,7 +21,7 @@ export default function LandingPageViewController() {
         })
         setCategoryCards(categoryCards) 
         })
-    },[onClickOnBusinessCard])
+    },[])
 
     return (<LandingPage categories={categoryCards} />)
 }
