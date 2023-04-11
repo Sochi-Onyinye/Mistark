@@ -9,9 +9,9 @@ import LandingPage from "./LandingPage";
 import RecordPageView from "../App.js"
 
 export default function UserLoginView(props) {
-  const {onSubmit, handleChange} = props
+  const {onSubmit, handleChange, errorMessage} = props
   RecordPageView()
-    return (
+  return (
       <div>
         <div class="bg">
           <img src={background} alt="" />
@@ -24,9 +24,11 @@ export default function UserLoginView(props) {
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Login as a customer?</h5>
 
+                  {errorMessage != null && <p>{errorMessage}</p>}
+
                   <input className='form-control sr-only' placeholder="Email" type='email' name="email" onChange={handleChange}/>
                   <input className='form-control sr-only'  placeholder="Password"  type='password' name="password" onChange={handleChange}/>
-                  <button type="button" class="btn btn-success btn-sm" id="signinOne">Login  <ArrowRightSquareFill id="loginicon" onClick={onSubmit}/></button>
+                  <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onSubmit}>Login  <ArrowRightSquareFill id="loginicon" /></button>
 
                   <Link to="/businesslogin" component={UserFeed} id="underline"><p id="signinToo">Sign in as business?</p></Link>
                   <p id="forgot">Forgot Password? | Click <a href="reset password" id="underline">here</a></p>
