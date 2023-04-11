@@ -11,6 +11,7 @@ import config  from './aws-exports.js';
 
 Amplify.configure(config)
 
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 root.render(

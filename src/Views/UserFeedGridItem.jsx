@@ -1,7 +1,9 @@
 import React from 'react'
+import RecordPageView from "../App.js"
 
 export function UserFeedGridItem(props){
 const {businessname, onClick, businessImageUrl} = props
+RecordPageView()
 return (
     <div class="col-9 card bg-success" id="userfeedcard" onClick={onClick}>
         {/* Everything you need to do for the user feed grid should be done within this div*/ }

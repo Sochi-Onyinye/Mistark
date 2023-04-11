@@ -1,10 +1,11 @@
 import React from "react"
 import { GeoAltFill } from "react-bootstrap-icons";
 import './Header.css' 
-
+import RecordPageView from "../App.js"
 
 class Header extends React.Component{
   render() {
+    RecordPageView()
     return (
       <div class="banner">
       <div class="d-flex justify-content-center align-items-center h-100">

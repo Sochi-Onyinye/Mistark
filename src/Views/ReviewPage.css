@@ -1,22 +1,119 @@
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 #businessHeader{
     color: #FFF;
-    width: auto;
+    width: 100%;
     height: fit-content;
 }
 
 #ratingCard{ 
+    align-content: center;
     color: #FFF;
-    width: auto;
+    width: 97%;
     height: fit-content;
+    margin-right: 15px !important;
+    padding: 20px !important;
+}
+
+#revText{
+    width: 98%;
+    margin-left: 15px;
+    height: 200px;
 }
 
 #value, #quality, #loc{
     color:black !important;
-    right:10px;
+    text-indent: 10px;
+    font-size: 20px;
 
 }
 
 #totalrev, #busname{
     color:black !important;
+    font-size: 15px;
+    display: inline-block;
 
 }
+
+#totalrev{
+float: right;
+}
+
+#textHead{
+    color: white!important;
+    margin-left: 15px;
+    margin-top: 14px;
+}
+
+
+#writeRev{
+    margin-left: 20px !important;
+    
+}
+
+#img1{
+    width: auto;
+    margin-left: 20px !important;
+    margin-top: 10px;
+}
+
+#review{
+    margin: 15px 10px 10px 10px;
+}
+
+.Rate {
+    color: lightblue !important;
+    margin-left: 10px;
+  }
+  
+.Rate:hover {
+    color: orange !important;
+  }
+
+#goStars {
+    position: relative;
+    top: -10px;
+}
+
+#totalstar{
+    color: black;
+    position: relative;
+    top: -10px;
+}
+
+.topStar1{
+    color: lightblue !important;
+    margin-left: 30px;
+}
+.topStar1:hover {
+    color: orange !important;
+  }
+
+.topStar2{
+    color: lightblue !important;
+    margin-left: 40px;
+}
+.topStar2:hover {
+    color: orange !important;
+  }
+
+.topStar3{
+    color: lightblue !important;
+    margin-left: 104px;
+}
+
+.topStar3:hover {
+    color: orange !important;
+  }
+
+#star1, #stars{
+    color: orange;
+
+}
+#star1{
+    margin-left: 500px;
+}
+

@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import { XSquareFill } from "react-bootstrap-icons";
 
 import LandingPage from "./LandingPage";
+import RecordPageView from "../App.js"
 
 
 class UnderReview extends React.Component{
   render() {
+    RecordPageView()
     return (
       <div>
         <div class="bg">

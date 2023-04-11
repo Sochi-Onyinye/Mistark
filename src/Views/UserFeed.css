@@ -6,6 +6,21 @@
     font-size: 15px;
 }
 
+#filterParent{
+    margin: 20px;
+}
+
+
+h6{
+    margin: 8px;
+    color: #00593E;
+    display: inline-block;
+}
+
+h6:active{
+    color: #fff;
+}
+
 #FilterPane{
     width:auto;
     height:fit-content;
@@ -17,9 +32,4 @@
 
 #filterhead {
     margin: 0 10px 10px 10px;
-}
-
-#filtervalue{
-    font-size: 15px;
-    margin-left:10px;
 }
