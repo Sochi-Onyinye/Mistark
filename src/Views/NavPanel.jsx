@@ -10,9 +10,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import UserFeed from "./UserFeed";
 
 import './NavPanel.css';
+import AboutPage from "./AboutPage";
+import HelpPage from "./HelpPage";
+import RecordPageView from "../App.js"
 
 class NavPanel extends React.Component{
   render() {
+    RecordPageView()
     return (
     <Navbar collapseOnSelect expand="lg">
         <Container>
@@ -25,8 +29,8 @@ class NavPanel extends React.Component{
                     <input id="searchNav" type="search" class="form-control" placeholder="Search"/>
                   </div>
                   <Link to="/userfeed" component={UserFeed} id="Home">Home</Link>
-                  <Link id="About">About</Link> 
-                  <Link id="Help">Help</Link> 
+                  <Link to="/aboutpage" component={AboutPage} id="About">About</Link> 
+                  <Link to="/helppage" component={HelpPage} id="Help">Help</Link> 
                    <PersonCircle id="Person"/>
                    <span id="user">User</span>
                 </Nav>

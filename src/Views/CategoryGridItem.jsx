@@ -1,7 +1,9 @@
 import React from 'react'
+import RecordPageView from "../App.js"
 
 export function CategoryGridItem(props){
 const {title, subtitle, onClick} = props
+RecordPageView()
 return (
 <div class="col-3 card bg-success" onClick={onClick}>
 <div class="card-body">
