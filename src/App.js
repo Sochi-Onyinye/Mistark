@@ -6,7 +6,7 @@ import UserRegistration from './Views/UserRegistration.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
 import BusinessAnalytics from "./Views/BusinessAnalytics.jsx";
 import BusinessRegistration from "./Views/BusinessRegistration.jsx";
-import BusinessPage from "./Views/BusinessPage.jsx";
+import BusinessPageController from './View Controllers/BusinessPageController.js';
 import RegistrationPage from "./Views/RegistrationPage.jsx";
 import LandingPageViewController from './View Controllers/LandingPageViewController.js';
 import UserLoginViewController from './View Controllers/UserLoginViewController.js';
@@ -29,7 +29,7 @@ const App = () => (
         <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeed/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
-        <Route path="/businesses/:businessID" element={<BusinessPage/>} />
+        <Route path="/businesses/:businessID" element={<BusinessPageController/>}
         <Route path="/categories/:categoryID" element={<BusinessPage/>} />
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
