@@ -7,9 +7,11 @@ import { XSquareFill } from "react-bootstrap-icons";
 import BusinessRegistration from "./BusinessRegistration";
 import UserRegistration from "./UserRegistration";
 import LandingPage from "./LandingPage";
+import RecordPageView from "../App.js";
 
 class RegistrationPage extends React.Component{
   render() {
+    RecordPageView()
     return (
       <div>
         <div class="bg">

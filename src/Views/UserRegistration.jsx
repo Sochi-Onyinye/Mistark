@@ -4,16 +4,14 @@ import background from '../others/background.png'
 import { Link } from 'react-router-dom';
 import { PencilFill } from "react-bootstrap-icons";
 import { XSquareFill } from "react-bootstrap-icons";
-
-
 import RegistrationSuccess from "./RegistrationSuccess";
 import LandingPage from "./LandingPage";
 import OnBehalf from "./OnBehalf"
+import RecordPageView from "../App.js"
 
-
-export default function UserRegistrationView(props){
+export default function UserRegistrationView(props) {
   const {handleChange, onSubmit, errorMessage} = props
-
+  RecordPageView()
   return (
       <div>
         <div class="bg">
