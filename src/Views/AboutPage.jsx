@@ -1,10 +1,13 @@
 import React from "react";
 import NavPanel from "./NavPanel";
-import './AboutPage.css' 
+import './AboutPage.css'   
+import RecordPageView from "../App.js"
+
 
 
 class AboutPage extends React.Component{
     render() {
+      RecordPageView()
       return (
         <div>
             <NavPanel/>

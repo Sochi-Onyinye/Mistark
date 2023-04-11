@@ -3,10 +3,12 @@ import "./BusinessPage.css";
 import NavPanel from "./NavPanel";
 import ReviewPage from "./ReviewPage";
 import { Link } from 'react-router-dom';
+import RecordPageView from "../App.js"
 
 
 class BusinessPage extends React.Component{
   render() {
+    RecordPageView()
     return (
       <div>
         <NavPanel/>

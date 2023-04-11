@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './Views/NavBar.jsx';
 import BusinessLogin from './Views/BusinessLoginView.jsx';
 import UserFeed from "./Views/UserFeed.jsx";
@@ -21,9 +21,88 @@ import ReviewSuccess from './Views/ReviewSuccess.jsx';
 import AboutPage from './Views/AboutPage.jsx';
 import HelpPage from './Views/HelpPage.jsx';
 
+import { AwsRum, AwsRumConfig} from 'aws-rum-web'
+
+try {
+  const config: AwsRumConfig = {
+    sessionSampleRate: 1,
+    guestRoleArn: "arn:aws:iam::329546288013:role/RUM-Monitor-eu-west-1-329546288013-0610979321861-Unauth",
+    identityPoolId: "eu-west-1:943b3ccb-059d-4805-9930-37008ed144e3",
+    endpoint: "https://dataplane.rum.eu-west-1.amazonaws.com",
+    telemetries: ["performance","errors","http"],
+    allowCookies: true,
+    enableXRay: false,
+    disableAutoPageView: true
+  };
+
+  const APPLICATION_ID: string = '951b34ed-3c55-45aa-b885-383cc312925d';
+  const APPLICATION_VERSION: string = '1.0.0';
+  const APPLICATION_REGION: string = 'eu-west-1';
+
+  awsRum: AwsRum = new AwsRum(
+    APPLICATION_ID,
+    APPLICATION_VERSION,
+    APPLICATION_REGION,
+    config
+  );
+} catch (error) {
+  // Ignore errors thrown during CloudWatch RUM web client initialization
+}
+
+
+function RecordPageView() {
+  let location = useLocation();
+  React.useEffect(() => {
+    console.log('logging pageview to cwr: ' + location.pathname);
+    AwsRum.recordPageView(location.pathname);
+  }, [location]);
+}
+
+function RecordPageViewWithoutUserId() {
+  let location = useLocation();
+  let baseLocation = location.pathname.split('/');
+  baseLocation.pop();
+  const baseLocationPath = baseLocation.join('/')
+  React.useEffect(() => {
+    console.log(baseLocationPath);
+    AwsRum.recordPageView(baseLocationPath);
+  }, [baseLocationPath]);
+}
+
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.log('recordingError: ' + error)
+    AwsRum.recordError(error);
+  }
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return (
+        <div>
+          <h1>Something went wrong.</h1>
+          <button onClick={() => {window.location.href = '/'}}>Clear Error</button>
+        </div>
+      );
+    }
+    return this.props.children; 
+  }
+}
+
 
 const App = () => (
   <React.StrictMode>
+    <ErrorBoundary>
       <Routes>
         <Route path="/login" element={<UserLoginViewController/>} />
         <Route path="/registration" element={<RegistrationPage/>} />
@@ -48,6 +127,7 @@ const App = () => (
         <Route path="/aboutpage" element={<AboutPage/>} />
         <Route path="/helppage" element={<HelpPage/>} />
       </Routes>
+    </ErrorBoundary>
     
   </React.StrictMode>
 );

@@ -6,9 +6,11 @@ import {  ArrowRightSquareFill } from "react-bootstrap-icons";
 import { XSquareFill } from "react-bootstrap-icons";
 import UserFeed from "./UserFeed";
 import LandingPage from "./LandingPage";
+import RecordPageView from "../App.js"
 
 export default function UserLoginView(props) {
   const {onSubmit, handleChange} = props
+  RecordPageView()
     return (
       <div>
         <div class="bg">

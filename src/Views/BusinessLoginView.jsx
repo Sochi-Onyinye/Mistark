@@ -7,10 +7,13 @@ import { XSquareFill } from "react-bootstrap-icons";
 
 import LandingPage from "./LandingPage";
 import BusinessAnalytics from "./BusinessAnalytics";
+import RecordPageView from "../App.js"
+
 
 
 export default function BusinessLoginView(props) {
   const {handleChange, onSubmit} = props;
+  RecordPageView()
     return (
       <div>
         <div class="bg">

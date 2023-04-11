@@ -9,10 +9,11 @@ import { XSquareFill } from "react-bootstrap-icons";
 import LandingPage from "./LandingPage";
 import OnBehalf from "./OnBehalf"
 import EmailConfirmation from "./EmailConfirmation";
-
+import RecordPageView from "../App.js"
 
 class UserRegistration extends React.Component{
-  render() {
+  render() { 
+    RecordPageView()
     return (
       <div>
         <div class="bg">

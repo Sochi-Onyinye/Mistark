@@ -8,10 +8,12 @@ import { PencilFill } from "react-bootstrap-icons";
 
 import LandingPage from "./LandingPage";
 import RegistrationSuccess from "./RegistrationSuccess";
+import RecordPageView from "../App.js"
 
 
 class EmailConfirmation extends React.Component{
   render() {
+    RecordPageView()
     return (
       <div>
         <div class="bg">

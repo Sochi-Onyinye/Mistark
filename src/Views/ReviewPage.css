@@ -1,14 +1,27 @@
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 #businessHeader{
     color: #FFF;
-    width: auto;
+    width: 100%;
     height: fit-content;
 }
 
 #ratingCard{ 
+    align-content: center;
     color: #FFF;
-    width: auto;
+    width: 97%;
     height: fit-content;
-    margin-left: 20px;
+    margin-right: 15px !important;
+    padding: 20px !important;
+}
+
+#revText{
+    width: 98%;
+    margin-left: 15px;
+    height: 200px;
 }
 
 #value, #quality, #loc{
@@ -20,23 +33,23 @@
 
 #totalrev, #busname{
     color:black !important;
-    text-indent: 10px;
-    font-size: 20px;
+    font-size: 15px;
+    display: inline-block;
 
 }
 
 #totalrev{
-    margin-left: 500px;
-    margin-top: -33px;
+float: right;
 }
 
 #textHead{
     color: white!important;
+    margin-left: 15px;
+    margin-top: 14px;
 }
 
 
 #writeRev{
-    width: auto;
     margin-left: 20px !important;
     
 }
@@ -46,13 +59,9 @@
     margin-left: 20px !important;
     margin-top: 10px;
 }
-#reviewimg, #ratings, #writtenReview{
-    width: auto;
-
-}
 
 #review{
-    margin-left: 1400px;
+    margin: 15px 10px 10px 10px;
 }
 
 .Rate {
@@ -63,6 +72,17 @@
 .Rate:hover {
     color: orange !important;
   }
+
+#goStars {
+    position: relative;
+    top: -10px;
+}
+
+#totalstar{
+    color: black;
+    position: relative;
+    top: -10px;
+}
 
 .topStar1{
     color: lightblue !important;
@@ -97,8 +117,3 @@
     margin-left: 500px;
 }
 
-#totalstar{
-    color: black;
-    margin-left: 650px;
-    margin-top: -35px;
-}
