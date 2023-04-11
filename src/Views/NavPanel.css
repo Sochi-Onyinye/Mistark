@@ -68,3 +68,18 @@ img {
     margin: 18px 10px 0 10px;
 
 }
+
+#ProfileParent{
+    margin: 700px !important;
+    position: relative;
+}
+
+#ProfilePane{
+    width:auto;
+    height:fit-content;
+    background-color: #10CD94;
+    margin: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+

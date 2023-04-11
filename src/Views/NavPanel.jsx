@@ -12,6 +12,7 @@ import UserFeed from "./UserFeed";
 import './NavPanel.css';
 import AboutPage from "./AboutPage";
 import HelpPage from "./HelpPage";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 class NavPanel extends React.Component{
   render() {
@@ -31,6 +32,30 @@ class NavPanel extends React.Component{
                   <Link to="/helppage" component={HelpPage} id="Help">Help</Link> 
                    <PersonCircle id="Person"/>
                    <span id="user">User</span>
+                   <div>
+                    <div className="row">
+                      <div className="col-3">
+                        <Dropdown>
+                          <Dropdown.Toggle variant="success" id=" ProfileParent"> User Profile </Dropdown.Toggle>
+                            <Dropdown.Menu class="card-body" id="ProfilePane">  
+                              
+                              <div className="dropdown-item">
+                                <input type="checkbox" name="Settings" class="card-subtitle mb-2" id="Profilevalue"/> 
+                                <label for="Settings">Settings</label>
+                              </div>
+                              <div className="dropdown-item">
+                                <input type="checkbox" name="Edit" class="card-subtitle mb-2" id="Profilevalue"/> 
+                                <label for="Edit">Edit User Profile</label>
+                              </div>
+                              <div className="dropdown-item">
+                                <input type="checkbox" name="Favorites" class="card-subtitle mb-2" id="Profilevalue"/> 
+                                <label for="Favorites">Favorites</label>
+                              </div>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    </div>
+                  </div>
                 </Nav>
               </Navbar.Collapse>
           </Container>
