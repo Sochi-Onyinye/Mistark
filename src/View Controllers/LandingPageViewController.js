@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function LandingPageViewController() {
     const [categoryCards, setCategoryCards] = useState();
     let navigate = useNavigate();
-    const onClickOnBusinessCard = useCallback(
+    const onClickOnCategoryCard = useCallback(
         (category) => {
         navigate(`/category:${category.getID()}`);
     },[navigate])
@@ -17,11 +17,11 @@ export default function LandingPageViewController() {
             if (category === null) {
                 return null
             }
-            return (<CategoryGridItem title={category.getName()} subtitle={category.getDescription()} onClick={()=>onClickOnBusinessCard(category)}></CategoryGridItem>)
+            return (<CategoryGridItem title={category.getName()} subtitle={category.getDescription()} onClick={()=>onClickOnCategoryCard(category)}></CategoryGridItem>)
         })
         setCategoryCards(categoryCards) 
         })
-    },[onClickOnBusinessCard])
+    },[])
 
     return (<LandingPage categories={categoryCards} />)
 }

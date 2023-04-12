@@ -8,7 +8,7 @@ export default class Category {
 	getID() {
 		return this.id;
 	}
-x
+	
 	getDescription() {
 		return this.description;
 	}

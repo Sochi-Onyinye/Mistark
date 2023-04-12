@@ -7,10 +7,9 @@ import RecordPageView from "../App.js"
 
 
 export default function UserFeed(props)  {
-  const {businessname} = props;
-  console.log(businessname)
+  const {businessCards} = props;
   RecordPageView()
-    return (
+  return (
       <div>
         <NavPanel/>
         <div className="row">
@@ -39,9 +38,8 @@ export default function UserFeed(props)  {
                 </Dropdown.Menu>
             </Dropdown>
           </div>
-
           <UserFeedGrid>
-            {props.categories}
+            {businessCards}
           </UserFeedGrid>
 
         </div> 
