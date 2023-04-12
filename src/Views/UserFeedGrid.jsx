@@ -1,7 +1,9 @@
 import React from 'react'
 import './UserFeedGrid.css'
+import RecordPageView from "../App.js"
 
 function UserFeedGrid(props) {
+    RecordPageView()        
     return (
       <div class="gridbody">
         <div class="container card-columns">

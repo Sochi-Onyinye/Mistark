@@ -8,9 +8,11 @@ import { XSquareFill } from "react-bootstrap-icons";
 
 import LandingPage from "./LandingPage";
 import UnderReview from "./UnderReview";
+import RecordPageView from "../App.js";
 
 class BusinessRegistration extends React.Component{
     render() {
+      RecordPageView()
         return (
           <div>
         <div class="bg">
