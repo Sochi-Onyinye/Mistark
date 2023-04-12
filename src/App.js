@@ -20,6 +20,8 @@ import ReviewPage from './Views/ReviewPage.jsx';
 import ReviewSuccess from './Views/ReviewSuccess.jsx';
 import AboutPage from './Views/AboutPage.jsx';
 import HelpPage from './Views/HelpPage.jsx';
+import BusinessPageB from './Views/BusinessPageB.jsx';
+import AddService from './Views/AddService.jsx';
 
 import { AwsRum, AwsRumConfig} from 'aws-rum-web'
 import UserFeedViewController from './View Controllers/UserFeedViewController.js';
@@ -126,6 +128,8 @@ const App = () => (
         <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
         <Route path="/aboutpage" element={<AboutPage/>} />
         <Route path="/helppage" element={<HelpPage/>} />
+        <Route path="/businesspageb" element={<BusinessPageB/>} />
+        <Route path="/addservice" element={<AddService/>} />
       </Routes>
     </ErrorBoundary>
     
