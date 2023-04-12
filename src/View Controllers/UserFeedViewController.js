@@ -28,7 +28,7 @@ export default function UserFeedViewController() {
                 if (business === null) {
                     return null
                 }
-                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage()} onClick={onClickOnBusinessCard}/>);
+                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage()} onClick={()=>onClickOnBusinessCard(business)}/>);
             });
             setBusinessesCards(businessCards) 
         }
@@ -37,7 +37,7 @@ export default function UserFeedViewController() {
 
     const onClickOnBusinessCard = useCallback(
         (business) => {
-        navigate(`/businesses:${business.getID()}`);
+        navigate(`/business/${business.getID()}`);
     },[])
 
 return (<UserFeed businessCards={businessesCards}onChangeFilter={setFilter} ></UserFeed>)

@@ -51,8 +51,8 @@ export async function fetchAllBusinessesFromDatabase() {
 
 export async function fetchBusinessesFromDatabase(business_id) {
     try {
-        const response = await API.graphql(graphqlOperation(queries.getBusiness, {id: business_id}));
-        return business
+        const response = await API.graphql(graphqlOperation(queries.getBusiness, {id: 23}));
+        console.log(response)
     } catch(e) {
         console.error(e);
     }

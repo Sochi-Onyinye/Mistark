@@ -114,8 +114,8 @@ const App = () => (
         <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeedViewController/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
-        <Route path="/businesses/:businessID" element={<BusinessPageController/>}
-        <Route path="/categories/:categoryID" element={<BusinessPage/>} />
+        <Route path="/business/:businessID" element={<BusinessPageController/>}/>
+        {/* <Route path="/categories/:categoryID" element={<BusinessPage/>} /> */}
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistrationViewController/>} />
@@ -123,7 +123,6 @@ const App = () => (
         <Route path="/underreview" element={<UnderReview/>} />
         <Route path="/emailconfirmation/:username" element={<EmailConfirmationController/>} />
         <Route path="/onbehalf" element={<OnBehalf/>} />
-        <Route path="/businesspage" element={<BusinessPage/>} />
         <Route path="/reviewpage" element={<ReviewPage/>} />
         <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
         <Route path="/aboutpage" element={<AboutPage/>} />
