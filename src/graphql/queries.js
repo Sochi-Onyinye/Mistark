@@ -1,19 +1,79 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const nearbyBusinesses = /* GraphQL */ `
+  query NearbyBusinesses(
+    $location: LocationInput!
+    $m: Int
+    $limit: Int
+    $nextToken: String
+  ) {
+    nearbyBusinesses(
+      location: $location
+      m: $m
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        description
+        address
+        location {
+          lat
+          lon
+        }
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
+          nextToken
+        }
+        services {
+          nextToken
+        }
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
+        }
+        profileImage
+        images
+        createdAt
+        updatedAt
+      }
+      total
+      nextToken
+    }
+  }
+`;
 export const getBusiness = /* GraphQL */ `
   query GetBusiness($id: ID!) {
     getBusiness(id: $id) {
       id
       name
       description
-      location
+      address
+      location {
+        lat
+        lon
+      }
       businessOwnerID
       businessOwner {
         id
         firstName
         lastName
         businesses {
+          total
           nextToken
         }
         email
@@ -24,7 +84,9 @@ export const getBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -45,17 +107,16 @@ export const getBusiness = /* GraphQL */ `
         }
         nextToken
       }
-      categories {
-        items {
-          id
-          categoryName
-          categoryDescription
-          createdAt
-          updatedAt
-          businessCategoriesId
-        }
-        nextToken
+      categoryID
+      category {
+        id
+        categoryName
+        categoryDescription
+        createdAt
+        updatedAt
       }
+      profileImage
+      images
       createdAt
       updatedAt
     }
@@ -72,7 +133,11 @@ export const listBusinesses = /* GraphQL */ `
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -88,13 +153,94 @@ export const listBusinesses = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
+        }
+        profileImage
+        images
+        createdAt
+        updatedAt
+      }
+      total
+      nextToken
+    }
+  }
+`;
+export const searchBusinesses = /* GraphQL */ `
+  query SearchBusinesses(
+    $filter: SearchableBusinessFilterInput
+    $sort: [SearchableBusinessSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableBusinessAggregationInput]
+  ) {
+    searchBusinesses(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        name
+        description
+        address
+        location {
+          lat
+          lon
+        }
+        businessOwnerID
+        businessOwner {
+          id
+          firstName
+          lastName
+          email
+          createdAt
+          updatedAt
+        }
+        reviews {
           nextToken
         }
+        services {
+          nextToken
+        }
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
+        }
+        profileImage
+        images
         createdAt
         updatedAt
       }
       nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -142,11 +288,15 @@ export const getBusinessOwner = /* GraphQL */ `
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
+        total
         nextToken
       }
       email
@@ -167,6 +317,7 @@ export const listBusinessOwners = /* GraphQL */ `
         firstName
         lastName
         businesses {
+          total
           nextToken
         }
         email
@@ -191,13 +342,19 @@ export const getReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -213,9 +370,16 @@ export const getReview = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -244,14 +408,19 @@ export const listReviews = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        overallRating
+        moneyRating
+        serviceRating
+        locationRating
         BusinessID
         Business {
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
@@ -276,7 +445,11 @@ export const getService = /* GraphQL */ `
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -292,9 +465,16 @@ export const getService = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -321,8 +501,11 @@ export const listServices = /* GraphQL */ `
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
@@ -330,6 +513,64 @@ export const listServices = /* GraphQL */ `
         updatedAt
       }
       nextToken
+    }
+  }
+`;
+export const searchServices = /* GraphQL */ `
+  query SearchServices(
+    $filter: SearchableServiceFilterInput
+    $sort: [SearchableServiceSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableServiceAggregationInput]
+  ) {
+    searchServices(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        title
+        description
+        price
+        image
+        businessID
+        businessOwner {
+          id
+          name
+          description
+          address
+          businessOwnerID
+          categoryID
+          profileImage
+          images
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -341,7 +582,6 @@ export const getBusinessCategory = /* GraphQL */ `
       categoryDescription
       createdAt
       updatedAt
-      businessCategoriesId
     }
   }
 `;
@@ -364,6 +604,49 @@ export const listBusinessCategories = /* GraphQL */ `
         updatedAt
       }
       nextToken
+    }
+  }
+`;
+export const searchBusinessCategories = /* GraphQL */ `
+  query SearchBusinessCategories(
+    $filter: SearchableBusinessCategoryFilterInput
+    $sort: [SearchableBusinessCategorySortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableBusinessCategoryAggregationInput]
+  ) {
+    searchBusinessCategories(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        categoryName
+        categoryDescription
+        createdAt
+        updatedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;

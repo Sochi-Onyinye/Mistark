@@ -20,8 +20,11 @@ import ReviewPage from './Views/ReviewPage.jsx';
 import ReviewSuccess from './Views/ReviewSuccess.jsx';
 import AboutPage from './Views/AboutPage.jsx';
 import HelpPage from './Views/HelpPage.jsx';
+import BusinessPageB from './Views/BusinessPageB.jsx';
+import AddService from './Views/AddService.jsx';
 
 import { AwsRum, AwsRumConfig} from 'aws-rum-web'
+import UserFeedViewController from './View Controllers/UserFeedViewController.js';
 
 try {
   const config: AwsRumConfig = {
@@ -109,7 +112,7 @@ const App = () => (
         <Route path="/navbar" element={<NavBar/>} />
         <Route path="/navpanel" element={<NavPanel/>} />
         <Route path="/" element={<LandingPageViewController/>} />
-        <Route path="/userfeed" element={<UserFeed/>} />
+        <Route path="/userfeed" element={<UserFeedViewController/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
         <Route path="/businesses/:businessID" element={<BusinessPageController/>}
         <Route path="/categories/:categoryID" element={<BusinessPage/>} />
@@ -125,6 +128,8 @@ const App = () => (
         <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
         <Route path="/aboutpage" element={<AboutPage/>} />
         <Route path="/helppage" element={<HelpPage/>} />
+        <Route path="/businesspageb" element={<BusinessPageB/>} />
+        <Route path="/addservice" element={<AddService/>} />
       </Routes>
     </ErrorBoundary>
     

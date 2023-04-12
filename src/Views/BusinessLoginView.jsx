@@ -8,6 +8,7 @@ import { XSquareFill } from "react-bootstrap-icons";
 import LandingPage from "./LandingPage";
 import BusinessAnalytics from "./BusinessAnalytics";
 import RecordPageView from "../App.js"
+import BusinessPageB from "./BusinessPageB";
 
 
 
@@ -32,7 +33,7 @@ export default function BusinessLoginView(props) {
 
                 <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onSubmit}>Login  <ArrowRightSquareFill id="loginicon"/></button>
 
-                  <Link to="/login" component={BusinessAnalytics} id="underline"><p id="signinToo">Sign in as a customer?</p></Link>
+                  <Link to="/businesspageb" component={BusinessPageB} id="underline"><p id="signinToo">Sign in as a customer?</p></Link>
                   <p id="forgot">Forgot Password? | Click <a href="reset password" id="underline">here</a></p>
                 </div>
               </div>
