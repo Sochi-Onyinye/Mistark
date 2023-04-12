@@ -24,3 +24,4 @@ export default function LandingPageViewController() {
     },[])
 
     return (<LandingPage categories={categoryCards} />)
+}

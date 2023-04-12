@@ -1,20 +1,22 @@
-import UserFeed from "../Views/UserFeed";
 import { useEffect, useState, useCallback} from "react";
-import { fetchAllBusinessesFromDatabase } from "../Utils/DatabaseManager";
-import UserFeedGrid from "../Views/UserFeedGrid";
-import { UserFeedGridItem } from "../Views/UserFeedGridItem";
+import { fetchAllBusinessesFromDatabase } from "../Utils/DatabaseManager.js";
+import UserFeed from "../Views/UserFeed.jsx";
+import { useNavigate } from "react-router-dom";
+import UserFeedGridItem from "../Views/UserFeedGridItem.jsx";
+
 
 export default function UserFeedViewController() {
-    const [businesses, setBusinessesCards] = useState();
+    let navigate = useNavigate();
+    const [businessesCards, setBusinessesCards] = useState();
     const [filter, setFilter] = useState(null)
     const [subFilter, setSubFilter] =  useState(null)
     useEffect(() => {
         async function fetchBusinesses () {
-            var fetched_business = null;
+            var fetched_businesses = null;
             if (filter === null) {
-                fetched_business = await fetchAllBusinessesFromDatabase();
+                fetched_businesses = await fetchAllBusinessesFromDatabase();
             } 
-            else if (filter === "near me") {
+            else if (filter === "Near me") {
                 // fetched_business = await ;
             }
             else if (filter === 'category') {
@@ -22,11 +24,11 @@ export default function UserFeedViewController() {
                 // iterate through map categories
             }
 
-            const businessCards = fetched_business.map(business => {
+            const businessCards = fetched_businesses.map(business => {
                 if (business === null) {
                     return null
                 }
-                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage} onClick={onClickOnBusinessCard}/>);
+                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage()} onClick={onClickOnBusinessCard}/>);
             });
             setBusinessesCards(businessCards) 
         }
@@ -38,5 +40,5 @@ export default function UserFeedViewController() {
         navigate(`/businesses:${business.getID()}`);
     },[])
 
-return (<UserFeed onChangeFilter={setFilter} ></UserFeed>)
+return (<UserFeed businessCards={businessesCards}onChangeFilter={setFilter} ></UserFeed>)
 }

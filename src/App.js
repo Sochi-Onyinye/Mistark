@@ -22,6 +22,7 @@ import AboutPage from './Views/AboutPage.jsx';
 import HelpPage from './Views/HelpPage.jsx';
 
 import { AwsRum, AwsRumConfig} from 'aws-rum-web'
+import UserFeedViewController from './View Controllers/UserFeedViewController.js';
 
 try {
   const config: AwsRumConfig = {
@@ -109,7 +110,7 @@ const App = () => (
         <Route path="/navbar" element={<NavBar/>} />
         <Route path="/navpanel" element={<NavPanel/>} />
         <Route path="/" element={<LandingPageViewController/>} />
-        <Route path="/userfeed" element={<UserFeed/>} />
+        <Route path="/userfeed" element={<UserFeedViewController/>} />
         <Route path="/businesslogin" element={<BusinessLogin/>} />
         <Route path="/businesses/:businessID" element={<BusinessPage/>} />
         <Route path="/categories/:categoryID" element={<BusinessPage/>} />

@@ -16,13 +16,12 @@ export default class Business {
 	}
 	
 	getProfileImage() {
-		return this.profileImage
+		return this.profileImage;
 	}
 
 	getBusinessImages() {
-		return this.businessImages
+		return this.businessImages;
 	}
-
 
 	getName() {
 		return this.name;
