@@ -7,13 +7,18 @@ export const onCreateBusiness = /* GraphQL */ `
       id
       name
       description
-      location
+      address
+      location {
+        lat
+        lon
+      }
       businessOwnerID
       businessOwner {
         id
         firstName
         lastName
         businesses {
+          total
           nextToken
         }
         email
@@ -24,7 +29,9 @@ export const onCreateBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -45,17 +52,16 @@ export const onCreateBusiness = /* GraphQL */ `
         }
         nextToken
       }
-      categories {
-        items {
-          id
-          categoryName
-          categoryDescription
-          createdAt
-          updatedAt
-          businessCategoriesId
-        }
-        nextToken
+      categoryID
+      category {
+        id
+        categoryName
+        categoryDescription
+        createdAt
+        updatedAt
       }
+      profileImage
+      images
       createdAt
       updatedAt
     }
@@ -67,13 +73,18 @@ export const onUpdateBusiness = /* GraphQL */ `
       id
       name
       description
-      location
+      address
+      location {
+        lat
+        lon
+      }
       businessOwnerID
       businessOwner {
         id
         firstName
         lastName
         businesses {
+          total
           nextToken
         }
         email
@@ -84,7 +95,9 @@ export const onUpdateBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -105,17 +118,16 @@ export const onUpdateBusiness = /* GraphQL */ `
         }
         nextToken
       }
-      categories {
-        items {
-          id
-          categoryName
-          categoryDescription
-          createdAt
-          updatedAt
-          businessCategoriesId
-        }
-        nextToken
+      categoryID
+      category {
+        id
+        categoryName
+        categoryDescription
+        createdAt
+        updatedAt
       }
+      profileImage
+      images
       createdAt
       updatedAt
     }
@@ -127,13 +139,18 @@ export const onDeleteBusiness = /* GraphQL */ `
       id
       name
       description
-      location
+      address
+      location {
+        lat
+        lon
+      }
       businessOwnerID
       businessOwner {
         id
         firstName
         lastName
         businesses {
+          total
           nextToken
         }
         email
@@ -144,7 +161,9 @@ export const onDeleteBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -165,17 +184,16 @@ export const onDeleteBusiness = /* GraphQL */ `
         }
         nextToken
       }
-      categories {
-        items {
-          id
-          categoryName
-          categoryDescription
-          createdAt
-          updatedAt
-          businessCategoriesId
-        }
-        nextToken
+      categoryID
+      category {
+        id
+        categoryName
+        categoryDescription
+        createdAt
+        updatedAt
       }
+      profileImage
+      images
       createdAt
       updatedAt
     }
@@ -233,11 +251,15 @@ export const onCreateBusinessOwner = /* GraphQL */ `
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
+        total
         nextToken
       }
       email
@@ -259,11 +281,15 @@ export const onUpdateBusinessOwner = /* GraphQL */ `
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
+        total
         nextToken
       }
       email
@@ -285,11 +311,15 @@ export const onDeleteBusinessOwner = /* GraphQL */ `
           id
           name
           description
-          location
+          address
           businessOwnerID
+          categoryID
+          profileImage
+          images
           createdAt
           updatedAt
         }
+        total
         nextToken
       }
       email
@@ -312,13 +342,19 @@ export const onCreateReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -334,9 +370,16 @@ export const onCreateReview = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -360,13 +403,19 @@ export const onUpdateReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -382,9 +431,16 @@ export const onUpdateReview = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -408,13 +464,19 @@ export const onDeleteReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -430,9 +492,16 @@ export const onDeleteReview = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -455,7 +524,11 @@ export const onCreateService = /* GraphQL */ `
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -471,9 +544,16 @@ export const onCreateService = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -495,7 +575,11 @@ export const onUpdateService = /* GraphQL */ `
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -511,9 +595,16 @@ export const onUpdateService = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -535,7 +626,11 @@ export const onDeleteService = /* GraphQL */ `
         id
         name
         description
-        location
+        address
+        location {
+          lat
+          lon
+        }
         businessOwnerID
         businessOwner {
           id
@@ -551,9 +646,16 @@ export const onDeleteService = /* GraphQL */ `
         services {
           nextToken
         }
-        categories {
-          nextToken
+        categoryID
+        category {
+          id
+          categoryName
+          categoryDescription
+          createdAt
+          updatedAt
         }
+        profileImage
+        images
         createdAt
         updatedAt
       }
@@ -572,7 +674,6 @@ export const onCreateBusinessCategory = /* GraphQL */ `
       categoryDescription
       createdAt
       updatedAt
-      businessCategoriesId
     }
   }
 `;
@@ -586,7 +687,6 @@ export const onUpdateBusinessCategory = /* GraphQL */ `
       categoryDescription
       createdAt
       updatedAt
-      businessCategoriesId
     }
   }
 `;
@@ -600,7 +700,6 @@ export const onDeleteBusinessCategory = /* GraphQL */ `
       categoryDescription
       createdAt
       updatedAt
-      businessCategoriesId
     }
   }
 `;

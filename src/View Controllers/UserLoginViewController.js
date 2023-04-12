@@ -13,7 +13,6 @@ export default function UserLoginViewController() {
     }
 
     const formSubmitter = async (e) => {
-        console.log("clicked")
 		e.preventDefault();
         const {isUserSignedIn, user, error} = await signIn(input.email, input.password)
         if (isUserSignedIn) { 

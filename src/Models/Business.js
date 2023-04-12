@@ -1,22 +1,28 @@
-import {v4 as uuidv4} from 'uuid';
-
-class Business {
-
-	business_id = uuidv4();
-
-	constructor(name, owners, description, location, hours, category, products, reviews) {
+export default class Business {
+	constructor(id, name, owner, description, location, hours, category, profileImage, businessImages) {
+		this.id = id
 		this.name = name;
-		this.owners = pwners;
+		this.owner = owner;
 		this.description = description;
 		this.location = location;
 		this.hours = hours;
 		this.category = category;
+		this.profileImage = profileImage
+		this.businessImages = businessImages
 	}
 
-	getBusinessId() {
-		return this.business_id;
+	getID() {
+		return this.id;
 	}
 	
+	getProfileImage() {
+		return this.profileImage;
+	}
+
+	getBusinessImages() {
+		return this.businessImages;
+	}
+
 	getName() {
 		return this.name;
 	}
@@ -58,7 +64,11 @@ class Business {
 	}
 
 	setCategory(new_category) {
-		return this.category = new_category;
+		this.category = new_category;
+	}
+
+	setProfileImage(image) {
+		this.profileImage = image
 	}
 
 }

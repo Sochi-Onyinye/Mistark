@@ -14,7 +14,7 @@ import { DataStore } from "aws-amplify";
 export default function BusinessCategoryUpdateForm(props) {
   const {
     id: idProp,
-    businessCategory,
+    businessCategory: businessCategoryModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -42,17 +42,18 @@ export default function BusinessCategoryUpdateForm(props) {
     setCategoryDescription(cleanValues.categoryDescription);
     setErrors({});
   };
-  const [businessCategoryRecord, setBusinessCategoryRecord] =
-    React.useState(businessCategory);
+  const [businessCategoryRecord, setBusinessCategoryRecord] = React.useState(
+    businessCategoryModelProp
+  );
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? await DataStore.query(BusinessCategory, idProp)
-        : businessCategory;
+        : businessCategoryModelProp;
       setBusinessCategoryRecord(record);
     };
     queryData();
-  }, [idProp, businessCategory]);
+  }, [idProp, businessCategoryModelProp]);
   React.useEffect(resetStateValues, [businessCategoryRecord]);
   const validations = {
     categoryName: [{ type: "Required" }],
@@ -195,7 +196,7 @@ export default function BusinessCategoryUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || businessCategory)}
+          isDisabled={!(idProp || businessCategoryModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -207,7 +208,7 @@ export default function BusinessCategoryUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || businessCategory) ||
+              !(idProp || businessCategoryModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}
