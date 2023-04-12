@@ -16,11 +16,13 @@ export async function uploadBusinessOwnerToDatabase(businessOwner) {
         console.log(e)
     }
 }
+/*
 export async function uploadReviewToDatabase(revview) {
     let reviewDetails = {
         content: review
     }
 }
+*/
 
 export async function uploadBusinessDatabase(businessOwner) {
     let businessDetails = {
