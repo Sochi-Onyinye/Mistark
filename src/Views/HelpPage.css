@@ -26,9 +26,9 @@
   }
   
   
-  .loginCard {
+  #helpcard{
   width: 34% !important;
-  height: 600px !important;
+  height: 550px !important;
   background-color: #D9F3EB;
   justify-content: center;
   align-self: center;

@@ -12,10 +12,12 @@ import UserFeed from "./UserFeed";
 import './NavPanel.css';
 import AboutPage from "./AboutPage";
 import HelpPage from "./HelpPage";
+import RecordPageView from "../App.js"
 import Dropdown from 'react-bootstrap/Dropdown';
 
 class NavPanel extends React.Component{
   render() {
+    RecordPageView()
     return (
     <Navbar collapseOnSelect expand="lg">
         <Container>

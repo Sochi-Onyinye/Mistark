@@ -3,11 +3,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./UserFeed.css";
 import NavPanel from "./NavPanel";
 import UserFeedGrid from "./UserFeedGrid";
+import RecordPageView from "../App.js"
 
 
 export default function UserFeed(props)  {
   const {businessname} = props;
   console.log(businessname)
+  RecordPageView()
     return (
       <div>
         <NavPanel/>

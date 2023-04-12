@@ -10,11 +10,13 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import UserLogin from "./UserLoginView";
 import RegistrationPage from "./RegistrationPage";
+import RecordPageView from "../App.js"
 
 import './NavBar.css';
 
 class NavBar extends React.Component{
   render() {
+    RecordPageView()
     return (
     <Navbar collapseOnSelect expand="lg">
         <Container>

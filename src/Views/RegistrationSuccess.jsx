@@ -6,10 +6,11 @@ import { XSquareFill } from "react-bootstrap-icons";
 
 import UserLoginView from "./UserLoginView";
 import LandingPage from "./LandingPage";
+import RecordPageView from "../App.js"
 
-class RegistrationSuccess extends React.Component{
-  render() {
-    return (
+export default function RegistrationSuccess() {
+ RecordPageView()
+ return (
       <div>
         <div class="bg">
           <img src={background} alt="" />
@@ -30,6 +31,4 @@ class RegistrationSuccess extends React.Component{
       </div>
        
     );
-  }
 }
-export default RegistrationSuccess
