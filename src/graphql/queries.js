@@ -84,7 +84,9 @@ export const getBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -340,7 +342,9 @@ export const getReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
@@ -404,7 +408,9 @@ export const listReviews = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        overallRating
+        moneyRating
+        serviceRating
+        locationRating
         BusinessID
         Business {
           id

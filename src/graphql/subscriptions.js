@@ -29,7 +29,9 @@ export const onCreateBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -93,7 +95,9 @@ export const onUpdateBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -157,7 +161,9 @@ export const onDeleteBusiness = /* GraphQL */ `
         items {
           id
           userID
-          overallRating
+          moneyRating
+          serviceRating
+          locationRating
           BusinessID
           content
           createdAt
@@ -336,7 +342,9 @@ export const onCreateReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
@@ -395,7 +403,9 @@ export const onUpdateReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
@@ -454,7 +464,9 @@ export const onDeleteReview = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      overallRating
+      moneyRating
+      serviceRating
+      locationRating
       BusinessID
       Business {
         id
