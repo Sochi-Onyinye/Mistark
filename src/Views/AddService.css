@@ -26,8 +26,8 @@
   }
   
   
-  .loginCard {
-  width: 34% ;
+  .ServiceCard {
+  width: 34% !important;
   height: 600px !important;
   background-color: #D9F3EB;
   justify-content: center;
@@ -59,14 +59,17 @@
     color: #00593E !important;
   }
   
-  input{
-    width: fit-content;
+  #inputId{
+    width: 100% !important;
     color: #00593E !important;
     margin: 5px;
+  }
+  
+  Input{
     border: 1px solid #fff !important;
   }
   
-  #signinOne, #signinToo{
+  #AddSer{
     margin: 30px auto;
   }
   
@@ -80,7 +83,7 @@
   
   @media only screen and (max-width: 740px) {
   
-    .loginCard {
+    .ServiceCard {
       width: 80% !important;
       height: 500px !important;
       font-size: 20px;
@@ -91,7 +94,7 @@
       }
   
     input{
-      width: auto !important;
+      width: 100% !important;
       margin: 5px;
       border: 1px solid #fff !important;
      }
@@ -104,7 +107,7 @@
   
   @media (min-width: 740px) and (max-width: 1024px) {
   
-    .loginCard {
+    .ServiceCard {
       width: 80% !important;
       height: 400px !important;
       font-size: 20px;
@@ -115,7 +118,7 @@
       }
   
    input{
-    width: auto !important;
+    width: 100% !important;
     margin: 5px;
     border: 1px solid #fff !important;
    }

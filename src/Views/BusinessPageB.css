@@ -1,0 +1,72 @@
+#specBusiness{
+    justify-content: center;
+}
+
+#businessimgs, #revcon{
+    margin: 15px 10px 7px 10px;
+}
+
+
+#reviewCard{
+    color: #FFF;
+    width: auto;
+    height: fit-content;
+}
+
+#contactCard{
+    color: #FFF;
+    width: auto;
+    height: fit-content;
+}
+
+#emptyrow{
+    background-color: transparent !important;
+    height: 50%; 
+    width: auto;
+    border-color: transparent;
+}
+
+#nameHeading, #currentReviews, #numReviews, #custReview {
+    color: #000 !important;
+
+}
+
+#nameHeading{
+    margin: 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+#currentReviews{
+    position: relative;
+    top: 10px;
+    right: -10px;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#numReviews{
+    position: relative;
+    right: -500px;
+    top: -18px;
+    font-size: 15px;
+}
+
+#businesslocal{
+    color: #000 !important;
+    font-size: 15px;
+
+}
+
+#hours{
+    color: #000 !important;
+    font-size: 15px;
+
+}
+
+#changePage{
+    position: relative;
+    margin-top: 100px; 
+    margin-left: 1370px;
+}
