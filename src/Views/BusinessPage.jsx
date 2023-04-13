@@ -85,6 +85,7 @@ class BusinessPage extends React.Component{
         </div>
       </div>
        
+       
     );
   }
 }
