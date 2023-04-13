@@ -4,10 +4,14 @@ import NavPanelB from "./NavPanelB";
 import ReviewPage from "./ReviewPage";
 import { Link } from 'react-router-dom';
 import RecordPageView from "../App.js"
+import ServiceGrid from "./ServiceGrid";
 import { PencilFill } from "react-bootstrap-icons";
 
-class BusinessPageB extends React.Component{
-  render() {
+
+function BusinessPageB(props) {
+    console.log(props)
+    const {business, reviews, serviceCards} = props
+
     RecordPageView()
     return (
       <div>
@@ -15,45 +19,40 @@ class BusinessPageB extends React.Component{
         <div id="specBusiness">
           {/*all the pictures*/}
           <div className="row" id="businessimgs">
-            <div className="col-7"><img src="" alt="bigger picture" /></div>
+            <div className="col-7"><img src={business?business.businessImages[0]:''}alt="bigger picture" id="biggerpics"/></div>
             <div className="col-5">
-              <div className="row" id="smallerpics"><img src="" alt="one small picture" /></div>
+              <div className="row" id="smallerpics"><img src={business?business.businessImages[1]:''} alt="one small picture" id='smallpic' /></div>
               <div className="row" id="twosmallerpics">
-                <div className="col-6"><img src="" alt="dividedpic1" /></div>
-                <div className="col-6"><img src="" alt="dividedpic2" /></div>
+                <div className="col-6"><img src={business?business.businessImages[2]:''} alt="dividedpic1" id="twosmallerpicsone" /></div>
+                <div className="col-6"><img src={business?business.businessImages[3]:''} alt="dividedpic2" id="twosmallerpicstwo"/></div>
               </div>
             </div>
           </div>
 
           {/*reviews and contact card*/}
           <div className="row" id="revcon">
+            <ServiceGrid> {serviceCards} </ServiceGrid>
             <div className="col-6">
-              <div className="card" id="reviewCard">
-                <h3 id="nameHeading">Business Name</h3>
-                <h4 id="currentReviews">Current Reviews</h4>
-                <h4 id="numReviews">106 reviews</h4> {/*insert the number of reviews this business has here*/}
-                <p id="custReview">reviews from past customers</p> {/*populate this with written reviews from customers*/}
-                <div className="col-7" id="emptycol"></div>
-                <div className="col-4" id="reviewcol">
-                  <Link to="/reviewpage" component={ReviewPage} ><button id="leave-review" type="button" size="sm" class="btn btn-success"> Leave a Review </button></Link>
-                </div>
-                
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="row card" id="emptyrow"></div>
               <div className="row card" id="contactCard">
-                <h3 id="businesslocal">Location</h3>
+                <h3 id="businesslocal">{business?business.address:''}</h3>
                 <h4 id="hours"> Operating Hours</h4>
+                <h4 id="time"> Mon - Fri: 8:00am - 8:00pm</h4>
+                <h4 id="contactBuss"> Contact Nick : nickphotos@gmail.com</h4>
+              </div>
+              <div className="row card" id="reviewCard">
+                <h3 id="nameHeading">{business?business.name:''}</h3>
+                <h4 id="currentReviews">{reviews?reviews[0]?.content:null}</h4>
+                <h4 id="numReview">{reviews?reviews.size: 0} reviews </h4> {/*insert the number of reviews this business has here*/}
+                  <div className="col-7" id="emptycol"></div>
+                  <div className="col-4" id="reviewcol">
+                    <Link to="/reviewpage" component={ReviewPage} ><button id="leavereview" type="button" class="btn btn-success btn-sm"> Leave a Review </button></Link>
+                  </div>
               </div>
             </div>
           </div>
         </div>
         <Link to="/businesspageb" component={BusinessPageB} ><button type="button" class="btn btn-success btn-sm" id="changePage">Edit View<PencilFill id= "editview"/></button></Link>
-        {/* This edit button should let the business owner change text eg contact info or upload different images*/}
-      </div>
-       
+      </div>   
     );
-  }
 }
 export default BusinessPageB

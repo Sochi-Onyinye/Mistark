@@ -1,11 +1,28 @@
-#specBusiness{
-    justify-content: center;
+.row{
+    width: auto;
+}
+
+#eachcard{
+    margin: 15px 20px;
+    height: 120px;
+    background-color: #198754;
+}
+
+#serviceimage{
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+}
+
+#servicename, #servicedesc{
+    color: #fff !important;
+    margin-top: 10px;
+    text-align: left;
 }
 
 #businessimgs, #revcon{
     margin: 15px 10px 7px 10px;
 }
-
 
 #reviewCard{
     color: #FFF;
@@ -33,9 +50,27 @@
 
 #nameHeading{
     margin: 10px;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
+}
+
+#currentReviews{
+    font-size: 12px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#custReview{
+    text-align: left !important;
+    margin-left: 10px;
+}
+
+#numReview{
+    position: relative;
+    top: -70px;
+    text-align: right;
+    font-size: 12px;
+    color: #000;
 }
 
 #businesslocal{
@@ -48,6 +83,41 @@
     color: #000 !important;
     font-size: 15px;
 
+}
+
+#businesslocal, #hours {
+    margin: 8px;
+}
+
+#leavereview{
+    margin: 7px;
+}
+
+#biggerpics{
+    width: 670px;
+    height:350px;
+    margin-left:20px;
+    border-radius: 10px;
+}
+
+#smallpic{
+    width: 600px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 15px;
+    margin-left: 0 !important;
+    
+}
+
+#twosmallerpicsone, #twosmallerpicstwo{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 0 !important;
+}
+#twosmallerpicsone{
+    margin-right: 20px !important;
 }
 
 #changePage{

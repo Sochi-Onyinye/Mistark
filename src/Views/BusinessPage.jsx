@@ -1,6 +1,6 @@
 import React from "react"
 import "./BusinessPage.css";
-import NavPanelB from "./NavPanel";
+import NavPanel from "./NavPanel";
 import ReviewPage from "./ReviewPage";
 import { Link } from 'react-router-dom';
 import RecordPageView from "../App.js"
@@ -14,7 +14,7 @@ function BusinessPage(props) {
     RecordPageView()
     return (
       <div>
-        <NavPanelB/>
+        <NavPanel/>
         <div id="specBusiness">
           {/*all the pictures*/}
           <div className="row" id="businessimgs">
@@ -35,6 +35,8 @@ function BusinessPage(props) {
               <div className="row card" id="contactCard">
                 <h3 id="businesslocal">{business?business.address:''}</h3>
                 <h4 id="hours"> Operating Hours</h4>
+                <h4 id="time"> Mon - Fri: 8:00am - 8:00pm</h4>
+                <h4 id="contactBuss"> Contact Nick : nickphotos@gmail.com</h4>
               </div>
               <div className="row card" id="reviewCard">
                 <h3 id="nameHeading">{business?business.name:''}</h3>
