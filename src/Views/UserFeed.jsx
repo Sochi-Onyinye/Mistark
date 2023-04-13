@@ -13,7 +13,7 @@ export default function UserFeed(props)  {
       <div>
         <NavPanel/>
         <div className="row">
-          <div className="col-3">
+          <div className="col-4">
             <Dropdown>
               <Dropdown.Toggle variant="success" id="filterParent"> Filter </Dropdown.Toggle>
                 <Dropdown.Menu class="card-body" id="FilterPane">  
@@ -38,7 +38,7 @@ export default function UserFeed(props)  {
                 </Dropdown.Menu>
             </Dropdown>
           </div>
-          <UserFeedGrid>
+          <UserFeedGrid className="col-8">
             {businessCards}
           </UserFeedGrid>
 
