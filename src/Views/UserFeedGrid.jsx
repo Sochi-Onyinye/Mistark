@@ -6,10 +6,11 @@ function UserFeedGrid(props) {
     RecordPageView()        
     return (
       <div class="gridbody">
-        <div class="container card-columns">
-        <div class="row">
-            {props.children}
-        </div>
+        <div className="container card-columns row">
+          <div className='col-1'></div>
+          <div className="col-11">
+              {props.children}
+          </div>
       </div>
       </div>
     );

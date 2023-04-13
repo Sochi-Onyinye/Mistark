@@ -18,12 +18,12 @@ function BusinessPage(props) {
         <div id="specBusiness">
           {/*all the pictures*/}
           <div className="row" id="businessimgs">
-            <div className="col-7"><img src={business?business.businessImages[0]:''}alt="bigger picture" /></div>
+            <div className="col-7"><img src={business?business.businessImages[0]:''}alt="bigger picture" id="biggerpics"/></div>
             <div className="col-5">
-              <div className="row" id="smallerpics"><img src={business?business.businessImages[1]:''} alt="one small picture" /></div>
+              <div className="row" id="smallerpics"><img src={business?business.businessImages[1]:''} alt="one small picture" id='smallpic' /></div>
               <div className="row" id="twosmallerpics">
-                <div className="col-6"><img src={business?business.businessImages[2]:''} alt="dividedpic1" /></div>
-                <div className="col-6"><img src={business?business.businessImages[3]:''} alt="dividedpic2" /></div>
+                <div className="col-6"><img src={business?business.businessImages[2]:''} alt="dividedpic1" id="twosmallerpicsone" /></div>
+                <div className="col-6"><img src={business?business.businessImages[3]:''} alt="dividedpic2" id="twosmallerpicstwo"/></div>
               </div>
             </div>
           </div>
