@@ -7,6 +7,7 @@ import logo from '../others/logo.png'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import BusinessPageB from "./BusinessPageB";
+import AddService from "./AddService";
 
 import './NavPanelB.css';
 import AboutPage from "./AboutPage";
@@ -42,7 +43,7 @@ class NavPanelB extends React.Component{
                                 <label>Settings</label>
                               </div>
                               <div className="dropdown-item">
-                                <label>Edit Business Profile</label>
+                              <Link to="/addservice" component={AddService} ><label>Update Services</label></Link>
                               </div>
                             </Dropdown.Menu>
                         </Dropdown>

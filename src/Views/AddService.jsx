@@ -26,7 +26,7 @@ export default function AddService(props) {
 
                   {errorMessage != null && <p>{errorMessage}</p>}
 
-                  <input className='form-control sr-only' placeholder="Service Name" type='text' name="SerName" onChange={handleChange}/>
+                  <input className='form-control sr-only' placeholder="Business Name" type='text' name="SerName" onChange={handleChange}/>
                   <input className='form-control sr-only' placeholder="Service Name" type='text' name="SerName" onChange={handleChange}/>
                   <button type="button" class="btn btn-success btn-sm" id="AddSer" onClick={onSubmit}>Add Service  <ArrowRightSquareFill id="Serviceicon" /></button>
                 </div>
