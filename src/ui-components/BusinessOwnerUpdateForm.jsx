@@ -14,7 +14,7 @@ import { DataStore } from "aws-amplify";
 export default function BusinessOwnerUpdateForm(props) {
   const {
     id: idProp,
-    businessOwner: businessOwnerModelProp,
+    businessOwner,
     onSuccess,
     onError,
     onSubmit,
@@ -41,18 +41,17 @@ export default function BusinessOwnerUpdateForm(props) {
     setEmail(cleanValues.email);
     setErrors({});
   };
-  const [businessOwnerRecord, setBusinessOwnerRecord] = React.useState(
-    businessOwnerModelProp
-  );
+  const [businessOwnerRecord, setBusinessOwnerRecord] =
+    React.useState(businessOwner);
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? await DataStore.query(BusinessOwner, idProp)
-        : businessOwnerModelProp;
+        : businessOwner;
       setBusinessOwnerRecord(record);
     };
     queryData();
-  }, [idProp, businessOwnerModelProp]);
+  }, [idProp, businessOwner]);
   React.useEffect(resetStateValues, [businessOwnerRecord]);
   const validations = {
     firstName: [{ type: "Required" }],
@@ -223,7 +222,7 @@ export default function BusinessOwnerUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || businessOwnerModelProp)}
+          isDisabled={!(idProp || businessOwner)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -235,7 +234,7 @@ export default function BusinessOwnerUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || businessOwnerModelProp) ||
+              !(idProp || businessOwner) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}
