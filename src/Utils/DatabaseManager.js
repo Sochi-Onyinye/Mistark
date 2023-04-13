@@ -122,7 +122,7 @@ export async function createBusinessesFromDatabaseMap(businesses) {
             if (image === null) {
                 return null;
             }
-            return await Storage.get(business.profileImage)
+            return await Storage.get(image)
         })):null;
         return new Business(business.id, business.name, business.owner, business.description, business.address, business.location, business.hours, business.category, profileImage, images)
     }))
