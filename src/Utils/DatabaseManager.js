@@ -4,7 +4,7 @@ import * as mutations from '../graphql/mutations.js';
 import * as queries from '../graphql/queries.js';
 import Category from '../Models/Category.js'
 import Business from '../Models/Business.js';
-
+import Review from '../Models/Review.js';
 
 export async function uploadBusinessOwnerToDatabase(businessOwner) {
     let ownerDetails = {
@@ -127,4 +127,15 @@ async function createBusinessesFromDatabaseMap(businesses) {
         return new Business(business.id, business.name, business.owner, business.description, business.location, business.hours, business.category, profileImage, images)
     }))
     return list_of_businesses;
+}
+
+async function createReviewFromDatabaseMap(reviews) {
+    const list_of_reviews = reviews.map(category => {
+        if (category === null) {
+            return null
+        }
+        const new_category = new Review(category.categoryName, category.categoryDescription, category.id)
+        return new_category 
+    })
+    return list_of_categories;
 }

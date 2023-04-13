@@ -1,18 +1,16 @@
-import {v4 as uuidv4} from 'uuid';
-
-class Review{
-	review_id = uuidv4();
-
-	constructor(commenter, business, text, rating, createdAt) {
-		this.user_id = commenter;
-		this.business = business;
-		this.text = text;
-		this.rating = rating;
-		this.createdAt = createdAt;
+export default class Review{
+	constructor(id, userID, text, moneyRating, serviceRating, locationRating, businessID, content ) {
+		this.id = id;
+		this.user_id = userID;
+		this.moneyRating = moneyRating;
+		this.content = content;
+		this.serviceRating = serviceRating;
+		this.businessID = businessID;
+		this.locationRating = locationRating;
 	}
 
 	getReviewId() {
-		return this.review_id;
+		return this.id;
 	}
 
 	getUserId() {
@@ -20,8 +18,9 @@ class Review{
 	}
 
 	getBusinessId() {
-		return this.business;
+		return this.businessID;
 	}
+	BusinessID
 
 	getText() {
 		return this.text;

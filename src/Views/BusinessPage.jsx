@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import RecordPageView from "../App.js"
 
 
-class BusinessPage extends React.Component{
+class BusinessPage extends React.Component {
   render() {
+    const {businessInfo, reviewCards, serviceCards }= this.state
     RecordPageView()
     return (
       <div>
@@ -29,7 +30,7 @@ class BusinessPage extends React.Component{
           <div className="row" id="revcon">
             <div className="col-6">
               <div className="card" id="reviewCard">
-                <h3 id="nameHeading">Business Name</h3>
+                <h3 id="nameHeading">e</h3>
                 <h4 id="currentReviews">Current Reviews</h4>
                 <h4 id="numReviews">106 reviews</h4> {/*insert the number of reviews this business has here*/}
                 <p id="custReview">reviews from past customers</p> {/*populate this with written reviews from customers*/}
@@ -43,8 +44,7 @@ class BusinessPage extends React.Component{
             <div className="col-6">
               <div className="row card" id="emptyrow"></div>
               <div className="row card" id="contactCard">
-                <h3 id="businesslocal">Location</h3>
-                <h4 id="hours"> Operating Hours</h4>
+                <h3 id="businesslocal">{businessInfo.address}</h3>
               </div>
             </div>
           </div>
