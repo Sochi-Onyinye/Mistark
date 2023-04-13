@@ -4,7 +4,7 @@ import * as mutations from '../graphql/mutations.js';
 import * as queries from '../graphql/queries.js';
 import Category from '../Models/Category.js'
 import Business from '../Models/Business.js';
-
+import Review from '../Models/Review.js';
 
 export async function uploadBusinessOwnerToDatabase(businessOwner) {
     let ownerDetails = {
@@ -45,6 +45,15 @@ export async function fetchAllBusinessesFromDatabase() {
         return businesses
     } catch(e) {
         console.log("nothing")
+        console.error(e);
+    }
+}
+
+export async function fetchBusinessesFromDatabase(business_id) {
+    try {
+        const response = await API.graphql(graphqlOperation(queries.getBusiness, {id: business_id}));
+        return response
+    } catch(e) {
         console.error(e);
     }
 }
@@ -102,7 +111,7 @@ async function createBusinessesCategoryFromDatabaseMap(categories) {
     return list_of_categories;
 }
 
-async function createBusinessesFromDatabaseMap(businesses) {
+export async function createBusinessesFromDatabaseMap(businesses) {
     const list_of_businesses = await Promise.all(businesses.map(async (business) => {
         if (business === null) {
             return null;
@@ -115,7 +124,13 @@ async function createBusinessesFromDatabaseMap(businesses) {
             }
             return await Storage.get(business.profileImage)
         })):null;
-        return new Business(business.id, business.name, business.owner, business.description, business.location, business.hours, business.category, profileImage, images)
+        return new Business(business.id, business.name, business.owner, business.description, business.address, business.location, business.hours, business.category, profileImage, images)
     }))
     return list_of_businesses;
 }
+
+export async function getS3urlFromFileName(filename) {
+    const url = await Storage.get(filename, {level: 'public'});
+    return url;
+}
+

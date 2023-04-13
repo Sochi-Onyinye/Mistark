@@ -8,8 +8,8 @@ import UserFeedGridItem from "../Views/UserFeedGridItem.jsx";
 export default function UserFeedViewController() {
     let navigate = useNavigate();
     const [businessesCards, setBusinessesCards] = useState();
-    const [filter, setFilter] = useState(null)
-    const [subFilter, setSubFilter] =  useState(null)
+    const [filter, setFilter] = useState(null);
+    const [subFilter, setSubFilter] =  useState(null);
     useEffect(() => {
         async function fetchBusinesses () {
             var fetched_businesses = null;
@@ -28,7 +28,7 @@ export default function UserFeedViewController() {
                 if (business === null) {
                     return null
                 }
-                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage()} onClick={onClickOnBusinessCard}/>);
+                return (<UserFeedGridItem businessName={business.getName()} profileImage={business.getProfileImage()} onClick={()=>onClickOnBusinessCard(business)}/>);
             });
             setBusinessesCards(businessCards) 
         }
@@ -37,7 +37,7 @@ export default function UserFeedViewController() {
 
     const onClickOnBusinessCard = useCallback(
         (business) => {
-        navigate(`/businesses:${business.getID()}`);
+        navigate(`/business/${business.getID()}`);
     },[])
 
 return (<UserFeed businessCards={businessesCards}onChangeFilter={setFilter} ></UserFeed>)
