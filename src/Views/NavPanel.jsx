@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from 'react-router-dom';
-import { Search } from "react-bootstrap-icons";
+import { Search, PersonFill } from "react-bootstrap-icons";
 
 import Container from 'react-bootstrap/Container';
 import logo from '../others/logo.png'
@@ -35,15 +35,13 @@ class NavPanel extends React.Component{
                     <div className="row">
                       <div className="col-3">
                         <Dropdown>
-                          <Dropdown.Toggle variant="success" id=" ProfileParent"> User Profile </Dropdown.Toggle>
+                          <Dropdown.Toggle variant="success" id="ProfileParent"> <PersonFill/> </Dropdown.Toggle>
                             <Dropdown.Menu class="card-body" id="ProfilePane">  
                               
                               <div className="dropdown-item">
-                                <input type="checkbox" name="Settings" class="card-subtitle mb-2" id="Profilevalue"/> 
                                 <label for="Settings">Settings</label>
                               </div>
                               <div className="dropdown-item">
-                                <input type="checkbox" name="Edit" class="card-subtitle mb-2" id="Profilevalue"/> 
                                 <label for="Edit">Edit User Profile</label>
                               </div>
                             </Dropdown.Menu>
