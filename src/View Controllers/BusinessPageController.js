@@ -1,36 +1,46 @@
 import BusinessPage from "../Views/BusinessPage.jsx";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchBusinessesFromDatabase } from "../Utils/DatabaseManager.js";
+import { fetchBusinessesFromDatabase, createBusinessesFromDatabaseMap,  getS3urlFromFileName } from "../Utils/DatabaseManager.js";
+import ServiceGridItem from "../Views/ServiceGridItem.jsx";
 
 export default function BusinessPageController() {
   let params = useParams();
   const [reviewsCards, setReviewCards] = useState(null)
   const [serviceCards, setServiceCards] = useState(null)
-  
+  const [business, setBusiness]   = useState(null)
   useEffect(() => {
-    async function fetchBusiness() {
+    console.log("useEffect")
+    async function fetchBusiness () {
       const response = await fetchBusinessesFromDatabase(params.businessID);
+      console.log(response)
       const businessInfo = response.data.getBusiness;
-      reviews = 
+      const business = await createBusinessesFromDatabaseMap([businessInfo])
+      setBusiness(business)
       if (businessInfo !== null) {
-        const reviewsCards = businessInfo.reviews.map((review) => {
+        const reviewsCards = businessInfo.reviews.items.map((review) => {
           if (review === null) {
             return null;
           }
-          //grid for review card
+          return review
         });
         setReviewCards(reviewsCards)
-        const servicesCards = businessInfo.services.map((service) => {
+        console.log(businessInfo)
+        const serviceCards = await Promise.all(businessInfo.services.items.map(async(service) => {
           if (service === null) {
             return null;
           }
-          //service cards
-        });
+
+          let imageUrl = await getS3urlFromFileName(service.image)
+          return <ServiceGridItem serviceName={service.title} serviceImage={imageUrl} serviceDescription={service.description}/>
+        }));
+        console.log(serviceCards)
         setServiceCards(serviceCards)
+
       }
     }
     fetchBusiness();
-  }, []);
-  return <BusinessPage businessInfo={businessInfo} reviews={reviewsCards} serviceCards={serviceCards} />;
+  },[]);
+
+  return <BusinessPage business={business?business[0]:null} reviews={reviewsCards} serviceCards={serviceCards} />;
 }

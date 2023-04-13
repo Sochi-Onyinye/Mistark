@@ -8,8 +8,8 @@ import UserFeedGridItem from "../Views/UserFeedGridItem.jsx";
 export default function UserFeedViewController() {
     let navigate = useNavigate();
     const [businessesCards, setBusinessesCards] = useState();
-    const [filter, setFilter] = useState(null)
-    const [subFilter, setSubFilter] =  useState(null)
+    const [filter, setFilter] = useState(null);
+    const [subFilter, setSubFilter] =  useState(null);
     useEffect(() => {
         async function fetchBusinesses () {
             var fetched_businesses = null;

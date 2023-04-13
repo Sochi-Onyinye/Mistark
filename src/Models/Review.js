@@ -1,12 +1,12 @@
 export default class Review{
-	constructor(id, userID, text, moneyRating, serviceRating, locationRating, businessID, content ) {
+	constructor(id, userID, description, moneyRating, serviceRating, locationRating, businessID, content ) {
 		this.id = id;
 		this.user_id = userID;
 		this.moneyRating = moneyRating;
-		this.content = content;
 		this.serviceRating = serviceRating;
 		this.businessID = businessID;
 		this.locationRating = locationRating;
+		this.content = content;
 	}
 
 	getReviewId() {
@@ -22,16 +22,16 @@ export default class Review{
 	}
 	BusinessID
 
-	getText() {
-		return this.text;
+	getDescription() {
+		return this.description;
 	}
 
-	getRating() {
-		return this.rating;
+	getMoneyRating() {
+		return this.moneyRating;
 	}
 
-	getCreatedAt() {
-		return this.createdAt;
+	getServiceRating() {
+		return this.serviceRating;
 	}
 
 	getID() {
@@ -40,13 +40,5 @@ export default class Review{
 
 	setBusinessId(new_business) {
 		this.business = new_business; 
-	}
-	
-	setText(new_text) {
-		this.text = text;
-	}
-
-	setRating(new_rating) {
-		this.rating = rating;
 	}
 }

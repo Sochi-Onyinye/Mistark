@@ -51,8 +51,8 @@ export async function fetchAllBusinessesFromDatabase() {
 
 export async function fetchBusinessesFromDatabase(business_id) {
     try {
-        const response = await API.graphql(graphqlOperation(queries.getBusiness, {id: 23}));
-        console.log(response)
+        const response = await API.graphql(graphqlOperation(queries.getBusiness, {id: business_id}));
+        return response
     } catch(e) {
         console.error(e);
     }
@@ -111,7 +111,7 @@ async function createBusinessesCategoryFromDatabaseMap(categories) {
     return list_of_categories;
 }
 
-async function createBusinessesFromDatabaseMap(businesses) {
+export async function createBusinessesFromDatabaseMap(businesses) {
     const list_of_businesses = await Promise.all(businesses.map(async (business) => {
         if (business === null) {
             return null;
@@ -124,18 +124,13 @@ async function createBusinessesFromDatabaseMap(businesses) {
             }
             return await Storage.get(business.profileImage)
         })):null;
-        return new Business(business.id, business.name, business.owner, business.description, business.location, business.hours, business.category, profileImage, images)
+        return new Business(business.id, business.name, business.owner, business.description, business.address, business.location, business.hours, business.category, profileImage, images)
     }))
     return list_of_businesses;
 }
 
-async function createReviewFromDatabaseMap(reviews) {
-    const list_of_reviews = reviews.map(category => {
-        if (category === null) {
-            return null
-        }
-        const new_category = new Review(category.categoryName, category.categoryDescription, category.id)
-        return new_category 
-    })
-    return list_of_categories;
+export async function getS3urlFromFileName(filename) {
+    const url = await Storage.get(filename, {level: 'public'});
+    return url;
 }
+
