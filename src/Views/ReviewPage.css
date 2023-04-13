@@ -1,8 +1,3 @@
-.row{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
 #businessHeader{
     color: #FFF;
     width: 100%;
@@ -39,7 +34,10 @@
 }
 
 #totalrev{
-float: right;
+    position: relative;
+    top: -23px;
+    text-align: right;
+    font-size: 12px;
 }
 
 #textHead{

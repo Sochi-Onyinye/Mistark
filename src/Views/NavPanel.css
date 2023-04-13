@@ -56,6 +56,7 @@ img {
 #ProfileParent{
     margin: 10px !important;
     position: relative;
+    top: 0px;
 }
 
 #ProfilePane{
