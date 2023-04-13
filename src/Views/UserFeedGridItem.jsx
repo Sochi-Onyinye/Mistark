@@ -3,7 +3,6 @@ import RecordPageView from "../App.js"
 
 export default function UserFeedGridItem(props) {
 const {businessName, onClick, profileImage} = props
-console.log(profileImage);
 RecordPageView()
 
 return (
