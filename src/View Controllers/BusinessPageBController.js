@@ -1,16 +1,18 @@
-import BusinessPage from "../Views/BusinessPage.jsx";
+import BusinessPageB from "../Views/BusinessPageB.jsx";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchBusinessesFromDatabase, createBusinessesFromDatabaseMap,  getS3urlFromFileName } from "../Utils/DatabaseManager.js";
 import ServiceGridItem from "../Views/ServiceGridItem.jsx";
 import { Auth } from 'aws-amplify';
 
-export default function BusinessPageController() {
+export default function BusinessPageBController() {
   let params = useParams();
   const [reviewsCards, setReviewCards] = useState(null)
   const [serviceCards, setServiceCards] = useState(null)
   const [business, setBusiness]   = useState(null)
+  const [isAdmin, setIsAdmin] = useState(null)
 
+  
   useEffect(() => {
     console.log("useEffect")
     async function fetchBusiness () {
@@ -43,5 +45,5 @@ export default function BusinessPageController() {
     fetchBusiness();
   },[]);
 
-  return <BusinessPage business={business?business[0]:null} reviews={reviewsCards} serviceCards={serviceCards} />;
+  return <BusinessPageB business={business?business[0]:null} reviews={reviewsCards} serviceCards={serviceCards} />;
 }

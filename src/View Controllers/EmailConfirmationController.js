@@ -6,7 +6,7 @@ import EmailConfirmation from "../Views/EmailConfirmation.jsx";
 export default function EmailConfirmationController() {
     let navigate = useNavigate();
     let params = useParams();
-    const [error, setError] = useState()
+    const [errorMessage, setErrorMessage] = useState(null)
     const [validationCode, setValidationCode] = useState('')
     const handleChange = (e) => {
         e.preventDefault();
@@ -20,10 +20,9 @@ export default function EmailConfirmationController() {
         if (isSignUpConfirmed) {
             navigate(`/registrationsuccess`)
         } else {
-            console.log(error)
-            setError(error)
+                setErrorMessage(error.message)
         }
 };
 
-return (<EmailConfirmation email={params.username} onVerify={onVerify} handleChange={handleChange}/>)
+return (<EmailConfirmation errorMessage={errorMessage} email={params.username} onVerify={onVerify} handleChange={handleChange}/>)
 }

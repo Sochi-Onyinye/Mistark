@@ -12,7 +12,7 @@ import RecordPageView from "../App.js"
 
 export default function EmailConfirmation(props) {
   RecordPageView()
-  const {onVerify, handleChange, email} = props;
+  const {onVerify, handleChange, email, errorMessage} = props;
     return (
       <div>
         <div class="bg">
@@ -28,7 +28,7 @@ export default function EmailConfirmation(props) {
                   <p>A one time verification pin has been sent to {email}. Please enter the code that you received to verify your email.</p>
 
                   <input className='form-control sr-only' id='verificationpin' name = "OTP" placeholder="OTP" type='text' onChange={handleChange}/>
-                  <h6 id="invalid">Invalid OTP. Kindly re-enter pin ... </h6>
+                  {errorMessage && <h6 id="invalid"> {errorMessage} </h6>}
                   <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onVerify}>Verify  <PencilFill id="loginicon"/></button>
                   </div>
               </div>
