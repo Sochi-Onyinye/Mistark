@@ -7,8 +7,8 @@ function UserFeedGrid(props) {
     return (
       <div class="gridbody">
         <div className="container card-columns row">
-          <div className='col-1'></div>
-          <div className="col-11">
+          <div className='col-3'></div>
+          <div className="col-9">
               {props.children}
           </div>
       </div>
