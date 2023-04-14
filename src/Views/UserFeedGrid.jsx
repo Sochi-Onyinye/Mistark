@@ -9,9 +9,9 @@ function UserFeedGrid(props) {
         <div className="container card-columns row">
           <div className='col-3'></div>
           <div className="col-9">
-              {props.children}
-          </div>
-      </div>
+            <div className='row'>{props.children}</div>
+          </div>       
+        </div>
       </div>
     );
   }
