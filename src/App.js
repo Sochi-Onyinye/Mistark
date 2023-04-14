@@ -20,11 +20,12 @@ import ReviewPage from './Views/ReviewPage.jsx';
 import ReviewSuccess from './Views/ReviewSuccess.jsx';
 import AboutPage from './Views/AboutPage.jsx';
 import HelpPage from './Views/HelpPage.jsx';
-import BusinessPageB from './Views/BusinessPageB.jsx';
+import BusinessPageBController from './View Controllers/BusinessPageBController.js';
 import AddService from './Views/AddService.jsx';
 import BusinessPage from './Views/BusinessPage.jsx';
 import { AwsRum, AwsRumConfig} from 'aws-rum-web'
 import UserFeedViewController from './View Controllers/UserFeedViewController.js';
+import BusinessLoginViewController from './View Controllers/BusinessLoginViewController.js';
 
 try {
   const config: AwsRumConfig = {
@@ -113,10 +114,10 @@ const App = () => (
         <Route path="/navpanel" element={<NavPanel/>} />
         <Route path="/" element={<LandingPageViewController/>} />
         <Route path="/userfeed" element={<UserFeedViewController/>} />
-        <Route path="/businesslogin" element={<BusinessLogin/>} />
+        <Route path="/businesslogin" element={<BusinessLoginViewController/>} />
         <Route path="/business/:businessID" element={<BusinessPageController/>}/>
+        <Route path="/business/:businessID" element={<BusinessPageBController/>}/>
         {/* <Route path="/categories/:categoryID" element={<BusinessPage/>} /> */}
-        <Route path="/business" element={<BusinessPage/>} /> 
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
         <Route path="/userregistration" element={<UserRegistrationViewController/>} />
@@ -128,7 +129,6 @@ const App = () => (
         <Route path="/reviewsuccess" element={<ReviewSuccess/>} />
         <Route path="/aboutpage" element={<AboutPage/>} />
         <Route path="/helppage" element={<HelpPage/>} />
-        <Route path="/businesspageb" element={<BusinessPageB/>} />
         <Route path="/addservice" element={<AddService/>} />
       </Routes>
     </ErrorBoundary>

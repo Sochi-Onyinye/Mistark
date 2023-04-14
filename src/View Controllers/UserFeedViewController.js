@@ -40,5 +40,5 @@ export default function UserFeedViewController() {
         navigate(`/business/${business.getID()}`);
     },[])
 
-return (<UserFeed businessCards={businessesCards}onChangeFilter={setFilter} ></UserFeed>)
+return (<UserFeed businessCards={businessesCards} onChangeFilter={setFilter} ></UserFeed>)
 }

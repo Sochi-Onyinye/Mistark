@@ -13,7 +13,7 @@ import BusinessPageB from "./BusinessPageB";
 
 
 export default function BusinessLoginView(props) {
-  const {handleChange, onSubmit} = props;
+  const {handleChange, onSubmit, errorMessage} = props;
   RecordPageView()
     return (
       <div>
@@ -27,13 +27,15 @@ export default function BusinessLoginView(props) {
                 <div className="p-5 d-flex flex-column align-items-center w-100">
                   <Link to="/" component={LandingPage} id="close"><XSquareFill/></Link>
                   <h5>Login as a Business?</h5>
+      
+                  {errorMessage != null && <p>{errorMessage}</p>}
 
                   <input className='form-control sr-only' placeholder="Email" type='email' name='email' onChange={handleChange}/>
                   <input className='form-control sr-only'  placeholder="Password"  type='password' name='password' onChange={handleChange}/>
 
                 <button type="button" class="btn btn-success btn-sm" id="signinOne" onClick={onSubmit}>Login  <ArrowRightSquareFill id="loginicon"/></button>
 
-                  <Link to="/businesspageb" component={BusinessPageB} id="underline"><p id="signinToo">Sign in as a customer?</p></Link>
+                  <Link to="/login" component={BusinessPageB} id="underline"><p id="signinToo">Sign in as a customer?</p></Link>
                   <p id="forgot">Forgot Password? | Click <a href="reset password" id="underline">here</a></p>
                 </div>
               </div>
