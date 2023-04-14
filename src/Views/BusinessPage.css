@@ -108,15 +108,15 @@
 
 #biggerpics{
     width: 670px;
-    height:350px;
+    height:520px;
     margin-left:20px;
     border-radius: 10px;
 }
 
 #smallpic{
-    width: 600px;
-    height: 150px;
-    margin-bottom: 10px;
+    width: 580px;
+    height: 300px;
+    margin-bottom:20px;
     margin-right: 20px;
     border-radius: 15px;
     margin-left: 0 !important;
@@ -124,11 +124,11 @@
 }
 
 #twosmallerpicsone, #twosmallerpicstwo{
-    width: 300px;
+    width: 250px;
     height: 200px;
     border-radius: 10px;
     margin-left: 0 !important;
 }
 #twosmallerpicsone{
-    margin-right: 20px !important;
+    margin-right: 5px !important;
 }
