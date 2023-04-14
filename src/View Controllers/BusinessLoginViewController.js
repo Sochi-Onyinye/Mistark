@@ -18,7 +18,7 @@ export default function BusinessLoginViewController() {
         e.preventDefault();
         const {isUserSignedIn, user, error} = await signIn(input.email, input.password)
         if (isUserSignedIn) { 
-            navigate(`/business/${24}`);
+            navigate(`/businessB/${24}`);
          }
         else {
             setErrorMessage(error.message);

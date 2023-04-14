@@ -116,7 +116,7 @@ const App = () => (
         <Route path="/userfeed" element={<UserFeedViewController/>} />
         <Route path="/businesslogin" element={<BusinessLoginViewController/>} />
         <Route path="/business/:businessID" element={<BusinessPageController/>}/>
-        <Route path="/business/:businessID" element={<BusinessPageBController/>}/>
+        <Route path="/businessB/:businessID" element={<BusinessPageBController/>}/>
         {/* <Route path="/categories/:categoryID" element={<BusinessPage/>} /> */}
         <Route path="/businessanalytics" element={<BusinessAnalytics/>} />
         <Route path="/businessRegistration" element={<BusinessRegistration/>} />
